@@ -1,0 +1,6 @@
+.local
+.terraform
+.terraform.tfstate*
+terraform.d
+cka_lab_images
+terraform.tfstate*
