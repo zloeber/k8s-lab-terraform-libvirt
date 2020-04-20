@@ -34,7 +34,7 @@ TF_VERSION ?= 0.12.23
 .PHONY: help
 help: ## Help
 	@echo 'Commands:'
-	@grep -E '^[a-zA-Z_%/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z1-9_%/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: deps
 deps: libvirt/pool/create keygen libvirt/provider ## Install terraform dependencies
@@ -113,20 +113,18 @@ apply: ## Apply deployment
 destroy: ## Plan deployment
 	$(terraform) destroy
 
-## Access deployed nodes
 .PHONY: ssh-master
 ssh-master: ## connect to the master node
 	IP=$(shell $(terraform) output master_ip); ssh -i $(KEY_NAME) ubuntu@$${IP}
 
-.PHONY: ssh-worker-1
-ssh-worker-1: ## connect to the master node
+.PHONY: ssh-worker1
+ssh-worker1: ## connect to worker node 1
+	IP=$(shell $(terraform) output worker_1_ip); ssh -i $(KEY_NAME) ubuntu@$${IP}
+
+.PHONY: ssh-worker2
+ssh-worker2: ## connect to worker node 2
 	IP=$(shell $(terraform) output worker_2_ip); ssh -i $(KEY_NAME) ubuntu@$${IP}
 
-.PHONY: ssh-worker-2
-ssh-worker-2: ## connect to the master node
-	IP=$(shell $(terraform) output worker_2_ip); ssh -i $(KEY_NAME) ubuntu@$${IP}
-
-## Other stuff
 .PHONY: show
 show: ## Show deployment information
 	@echo "OS: $(OS)"
@@ -135,3 +133,5 @@ show: ## Show deployment information
 	@echo "POOL_PATH: $(POOL_PATH)"
 	@echo "TF_PROVIDER_PATH: $(TF_PROVIDER_PATH)"
 	@echo "MASTER NODE IP: $(shell $(terraform) output master_ip)"
+	@echo "WORKER 1 NODE IP: $(shell $(terraform) output worker_1_ip)"
+	@echo "WORKER 2 NODE IP: $(shell $(terraform) output worker_2_ip)"
