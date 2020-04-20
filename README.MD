@@ -33,16 +33,19 @@ This lab consists of 3 virtual machines with the following names and specificati
 | k8s-worker-1 | 2 | 2GB | 40GB | 172.16.1.21/24 |
 | k8s-worker-2 | 2 | 2GB | 40GB | 172.16.1.22/24 |
 
-If all the dependencies are in place then initialize, plan, and apply the terraform manifest to bring things up.
-
 ```bash
+# If all the dependencies are in place then initialize, plan, and apply the terraform manifest to bring things up.
 make init plan create
-```
 
-Destroy just as easily.
-
-```bash
+# Destroy just as easily.
 make destroy
+
+# Access the master node
+make ssh-master
+
+# or the worker nodes
+make ssh-worker-1
+make ssh-worker-2
 ```
 
 ## Issues
@@ -62,3 +65,9 @@ sudo echo "user = `whoami`" >> /etc/libvirt/qemu.conf
 sudo echo "group = `whoami`" >> /etc/libvirt/qemu.conf
 sudo systemctl start libvirtd.service
 ```
+
+## Links
+
+[Libvirt Terraform Provider](https://github.com/dmacvicar/terraform-provider-libvirt)
+
+[CKA Practice Excercises](https://github.com/alijahnas/CKA-practice-exercises) (initial source of the terraform manifest and a great study guide!)

@@ -6,10 +6,6 @@ BIN_PATH := $(ROOT_PATH)/.local/bin
 KEY_PATH := $(ROOT_PATH)/.local/.ssh
 KEY_NAME := $(KEY_PATH)/id_rsa
 
-GIT_SITE := github.com
-GIT_DESCRIPTION := A k8s lab using terraform/libvirt/qemu
-GIT_REPO := zloeber/cka-lab-libvirt
-
 POOL_NAME ?= cka_lab_images
 POOL_PATH ?= $(shell pwd)/$(POOL_NAME)
 
@@ -40,36 +36,18 @@ help: ## Help
 	@echo 'Commands:'
 	@grep -E '^[a-zA-Z_%/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-## Some helper scripts to bootstrap the project
-.PHONY: .github/deps
-.github/deps: ## Install github cli tool
-	@[ -n "/tmp" ] && [ -n "gh" ] && rm -rf "/tmp/gh"
-	@mkdir -p /tmp/gh $(BIN_PATH)
-	@curl --retry 3 --retry-delay 5 --fail -sSL -o - https://github.com/cli/cli/releases/download/v0.6.4/gh_0.6.4_linux_amd64.tar.gz | tar -zx -C '/tmp/gh'
-	@find /tmp/gh -type f -name 'gh*' | xargs -I {} cp -f {} $(gh)
-	@chmod +x $(gh)
-	@[ -n "/tmp" ] && [ -n "gh" ] && rm -rf "/tmp/gh"
-	@echo "Installed: $(gh)"
-
-.PHONY: .github/bootstrap
-.github/bootstrap: .github/deps ## Create github repo if it doesn't exist
-	git init || true
-	git add --all .
-	git commit -m 'initial commit'
-	$(gh) repo create --repo $(GIT_REPO) --description "$(GIT_DESCRIPTION)" || true
-	git remote rm origin || true
-	git remote add origin git@$(GIT_SITE):$(GIT_REPO).git
-	git push origin master || true
-
 .PHONY: deps
-deps: libvirt/pool/create keygen ## Install terraform dependencies
+deps: libvirt/pool/create keygen libvirt/provider ## Install terraform dependencies
 ifeq (,$(wildcard $(terraform)))
 	@echo "Attempting to install terraform - $(TF_VERSION)"
 	@mkdir -p $(BIN_PATH)
 	@wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/$(TF_VERSION)/terraform_$(TF_VERSION)_$(OS)_$(ARCH).zip
 	@unzip -d $(BIN_PATH) /tmp/terraform.zip && rm /tmp/terraform.zip
 endif
-ifeq (,$(wildcard $(TF_PROVIDER_PATH)))
+
+.PHONY: libvirt/provider
+libvirt/provider: ## Grab the libvirt terraform provider
+ifeq "$(wildcard $(TF_PROVIDER_PATH))" ""
 	@echo "Attempting to grab the libvirt provider"
 	@mkdir -p $(ROOT_PATH)/terraform.d/plugins/$(OS)_$(ARCH)
 	$(ROOT_PATH)/init.sh
@@ -155,4 +133,5 @@ show: ## Show deployment information
 	@echo "ARCH: $(ARCH)"
 	@echo "POOL_NAME: $(POOL_NAME)"
 	@echo "POOL_PATH: $(POOL_PATH)"
+	@echo "TF_PROVIDER_PATH: $(TF_PROVIDER_PATH)"
 	@echo "MASTER NODE IP: $(shell $(terraform) output master_ip)"
