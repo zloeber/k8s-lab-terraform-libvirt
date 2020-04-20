@@ -1,17 +1,18 @@
+# Libvirt/Terraform K8s Lab Environment
 
 ## Requirements
 
-This uses libvirt and requires qemu to deploy. I also specifically use the Ubuntu version of the libvirt terraform provider (this can be changed in the init.sh script to some other supported Distro though). As such an Ubuntu based host should be used. You will also want to ensure that the folder you cloned this repo to is on a disk with plenty of space and a host that can accommodate the [lab infrastructure](#The-Lab)
+This uses the libvirt provider for terraform which, as far as I can see, only creates prebuilt binaries for Linux variants. As such Linux as a base host is required.
 
+I got this all running using Qemu as the backing provider for libvirt. I also used the Ubuntu release version of the libvirt terraform provider (this can be changed in the init.sh script to some other supported Distro though). As such an Ubuntu based host should be used. You will also want to ensure that the folder you cloned this repo to is on a disk with plenty of space and a host that can accommodate the three VMs that will get spun up.
 
-
-We need a few apps and utilities (probably more than this though, sorry if the base list of packages isn't 100% correct)
+We need a few base apps and utilities (probably more than this needs to be installed, sorry if the base list of packages isn't 100% correct)
 
 ```bash
 sudo apt install libvirt-clients libvirt-daemon qemu
 ```
 
-Your account must have access to manage libvirt resources
+Your account must have access to manage libvirt resources as well
 
 ```bash
 sudo usermod -a -G libvirt $(whoami)
@@ -29,6 +30,7 @@ make deps
 This lab consists of 3 virtual machines with the following names and specifications:
 
 | Node | vCPUS | RAM | Disk | IP |
+|---|---|---|---|---|
 | k8s-master | 2 | 4GB | 40GB | 172.16.1.11/24 |
 | k8s-worker-1 | 2 | 2GB | 40GB | 172.16.1.21/24 |
 | k8s-worker-2 | 2 | 2GB | 40GB | 172.16.1.22/24 |
@@ -44,8 +46,8 @@ make destroy
 make ssh-master
 
 # or the worker nodes
-make ssh-worker-1
-make ssh-worker-2
+make ssh-worker1
+make ssh-worker2
 ```
 
 ## Issues
