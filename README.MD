@@ -9,7 +9,7 @@ I got this all running using Qemu as the backing provider for libvirt. I also us
 We need a few base apps and utilities (probably more than this needs to be installed, sorry if the base list of packages isn't 100% correct)
 
 ```bash
-sudo apt install libvirt-clients libvirt-daemon qemu
+sudo apt install libvirt-clients libvirt-daemon qemu tmux
 ```
 
 Your account must have access to manage libvirt resources as well
@@ -48,6 +48,9 @@ make ssh-master
 # or the worker nodes
 make ssh-worker1
 make ssh-worker2
+
+# or all the nodes at once with synchronized input
+make ssh-all
 ```
 
 ## Issues
@@ -73,3 +76,5 @@ sudo systemctl start libvirtd.service
 [Libvirt Terraform Provider](https://github.com/dmacvicar/terraform-provider-libvirt)
 
 [CKA Practice Excercises](https://github.com/alijahnas/CKA-practice-exercises) (initial source of the terraform manifest and a great study guide!)
+
+[xpanes for tmux](https://github.com/greymd/tmux-xpanes)
