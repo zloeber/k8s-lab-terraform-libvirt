@@ -123,15 +123,15 @@ destroy: ## Plan deployment
 
 .PHONY: ssh-master
 ssh-master: ## connect to the master node
-	IP=$(shell $(terraform) output master_ip); ssh -i $(KEY_NAME) ubuntu@$${IP}
+	IP=$(shell $(terraform) output master_ip); ssh -o StrictHostKeyChecking=no -i $(KEY_NAME) ubuntu@$${IP}
 
 .PHONY: ssh-worker1
 ssh-worker1: ## connect to worker node 1
-	IP=$(shell $(terraform) output worker_1_ip); ssh -i $(KEY_NAME) ubuntu@$${IP}
+	IP=$(shell $(terraform) output worker_1_ip); ssh -o StrictHostKeyChecking=no -i $(KEY_NAME) ubuntu@$${IP}
 
 .PHONY: ssh-worker2
 ssh-worker2: ## connect to worker node 2
-	IP=$(shell $(terraform) output worker_2_ip); ssh -i $(KEY_NAME) ubuntu@$${IP}
+	IP=$(shell $(terraform) output worker_2_ip); ssh -o StrictHostKeyChecking=no -i $(KEY_NAME) ubuntu@$${IP}
 
 .PHONY: ssh-all
 ssh-all: ## Use xpanes/tmux to connect to all nodes at once!
