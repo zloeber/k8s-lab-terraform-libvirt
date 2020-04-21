@@ -38,7 +38,7 @@ help: ## Help
 	@grep -E '^[a-zA-Z1-9_%/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: deps
-deps: libvirt/pool/create .dep/keygen .dep/xpanes libvirt/provider ## Install terraform dependencies
+deps: .dep/keygen .dep/xpanes libvirt/provider ## Install terraform dependencies
 ifeq (,$(wildcard $(terraform)))
 	@echo "Attempting to install terraform - $(TF_VERSION)"
 	@mkdir -p $(BIN_PATH)
@@ -76,29 +76,30 @@ docs: ## Update module documentation with terraform-docs
 validate: ## Run terraform-validate against module
 	terraform-validator .
 
-.PHONY: libvirt/pool/create
-libvirt/pool/create: ## Create storage pool locally
-	## libvirt based setup of local image pool to localize running images to this location
-	virsh pool-list --all
-	virsh pool-define-as $(POOL_NAME) dir - - - - $(POOL_PATH) || true
-	mkdir -p $(POOL_PATH)
-	virsh pool-start $(POOL_NAME) || true
-	virsh pool-autostart $(POOL_NAME) || true
-	virsh pool-info $(POOL_NAME) || true
+# .PHONY: libvirt/pool/create
+# libvirt/pool/create: ## Create storage pool locally
+# 	## libvirt based setup of local image pool to localize running images to this location
+# 	virsh pool-list --all
+# 	virsh pool-define-as $(POOL_NAME) dir - - - - $(POOL_PATH) || true
+# 	mkdir -p $(POOL_PATH)
+# 	virsh pool-start $(POOL_NAME) || true
+# 	virsh pool-autostart $(POOL_NAME) || true
+# 	virsh pool-info $(POOL_NAME) || true
 
-.PHONY: libvirt/pool/remove
-libvirt/pool/remove: ## Removes local storage pool
-	virsh pool-destroy ${POOL_NAME} || true
-	virsh pool-undefine ${POOL_NAME} || true
+# .PHONY: libvirt/pool/remove
+# libvirt/pool/remove: ## Removes local storage pool
+# 	virsh pool-destroy ${POOL_NAME} || true
+# 	virsh pool-undefine ${POOL_NAME} || true
 
 .PHONY: libvirt/domain/remove
-libvirt/domain/remove: ## Removes any dangling libvirt domains
+libvirt/clean: ## Removes any dangling libvirt domains and subnets
 	virsh destroy k8s-master || true
 	virsh undefine k8s-master || true
 	virsh destroy k8s-worker-1 || true
 	virsh undefine k8s-worker-1 || true
 	virsh destroy k8s-worker-2 || true
 	virsh undefine k8s-worker-2 || true
+	virsh net-undefine k8snet || true
 
 .PHONY: clean
 clean: ## Clean local cached terreform elements
@@ -139,6 +140,14 @@ ssh-all: ## Use xpanes/tmux to connect to all nodes at once!
 	  ubuntu@$(shell $(terraform) output master_ip) \
           ubuntu@$(shell $(terraform) output worker_1_ip) \
           ubuntu@$(shell $(terraform) output worker_2_ip)
+
+.PHONY: ssh-all-desync
+ssh-all-desync: ## Use xpanes/tmux to connect to all nodes at once!
+	$(xpanes) -d -c "ssh -i $(KEY_NAME) -o StrictHostKeyChecking=no {}" \
+	  ubuntu@$(shell $(terraform) output master_ip) \
+          ubuntu@$(shell $(terraform) output worker_1_ip) \
+          ubuntu@$(shell $(terraform) output worker_2_ip)
+
 
 .PHONY: show
 show: ## Show deployment information

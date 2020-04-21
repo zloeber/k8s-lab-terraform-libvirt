@@ -1,15 +1,20 @@
 locals {
   public_key       = "./.local/.ssh/id_rsa.pub"
-  volume_pool_name = "cka_lab_images"
 }
 
 provider libvirt {
   uri = "qemu:///system"
 }
 
+resource libvirt_pool local {
+  name = "ubuntu"
+  type = "dir"
+  path = "${path.cwd}/volume_pool"
+}
+
 resource libvirt_volume ubuntu1804_cloud {
   name   = "ubuntu18.04.qcow2"
-  pool   = local.volume_pool_name
+  pool   = libvirt_pool.local.name
   source = "https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img"
   format = "qcow2"
 }
@@ -17,14 +22,14 @@ resource libvirt_volume ubuntu1804_cloud {
 resource libvirt_volume ubuntu1804_resized {
   name           = "ubuntu-volume-${count.index}"
   base_volume_id = libvirt_volume.ubuntu1804_cloud.id
-  pool           = local.volume_pool_name
+  pool           = libvirt_pool.local.name
   size           = 42949672960
   count          = 3
 }
 
 resource libvirt_cloudinit_disk cloudinit_ubuntu {
   name = "cloudinit_ubuntu_resized.iso"
-  pool = "default"
+  pool = libvirt_pool.local.name
 
   user_data = <<EOF
 #cloud-config

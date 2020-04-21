@@ -9,7 +9,7 @@ I got this all running using Qemu as the backing provider for libvirt. I also us
 We need a few base apps and utilities (probably more than this needs to be installed, sorry if the base list of packages isn't 100% correct)
 
 ```bash
-sudo apt install libvirt-clients libvirt-daemon qemu tmux
+sudo apt install libvirt-clients libvirt-daemon qemu tmux genisoimage
 ```
 
 Your account must have access to manage libvirt resources as well
@@ -19,7 +19,9 @@ sudo usermod -a -G libvirt $(whoami)
 newgrp libvirt
 ```
 
-Within this cloned repo you should create the libvirt storage pool (this is important as you will want to ensure that you have enough disk space to accomodate the VMs). We also need to manually pull in the most recent libvirt terraform provider plugin and create an ssh key for use in the deployment. You can do all of this easily enough with a quick make task.
+~~Within this cloned repo you should create the libvirt storage pool (this is important as you will want to ensure that you have enough disk space to accomodate the VMs)~~ The volume pool creation/destruction is now part of the terraform manifest. 
+
+We need to manually pull in the most recent libvirt terraform provider plugin and create an ssh key for use in the deployment. You can do all of this easily enough with a quick make task.
 
 ```bash
 make deps
