@@ -63,50 +63,10 @@ The cloud_init.cfg template is used to provide an initial configuration for the 
 - Adding the kubernetes repo and gpg key
 - Installing some initial required packages common to all nodes
 - Configure the default user (ubuntu) with passwordless sudo rights.
+- Install containerd.io, docker-ce, docker-ce-cli, kubelet, kubeadm, and kubectl (and put kube* marked for hold)
+- Deploy docker service as a daemon
 
-What is still left to do (this can be done via copy/paste after running `make ssh-all` to deploy to all nodes)
-
-```bash
-# Install docker and kube tools
-sudo apt-get install -y \
-  containerd.io=1.2.10-3 \
-  docker-ce=5:19.03.4~3-0~ubuntu-$(lsb_release -cs) \
-  docker-ce-cli=5:19.03.4~3-0~ubuntu-$(lsb_release -cs) \
-  kubelet=1.17.5-00 kubeadm=1.17.5-00 kubectl=1.17.5-00
-sudo apt-mark hold kubelet kubeadm kubectl
-
-# Setup docker daemon.
-cat << EOF | sudo tee /etc/docker/daemon.json
-{
-  "exec-opts": ["native.cgroupdriver=systemd"],
-  "log-driver": "json-file",
-  "log-opts": {
-    "max-size": "100m"
-  },
-  "storage-driver": "overlay2"
-}
-EOF
-
-sudo mkdir -p /etc/systemd/system/docker.service.d
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-```
-
-Finally, I couldn't figure out how to force the cloud config to update the hostnames properly so they all end up with the name of 'ubuntu'. Unfortunately the only work-around at the moment is to manually set them at each VM.
-
-```bash
-# On k8s-master
-sudo hostnamectl set-hostname k8s-master
-sudo reboot
-
-# On k8s-worker-1
-sudo hostnamectl set-hostname k8s-worker-1
-sudo reboot
-
-# On k8s-worker-2
-sudo hostnamectl set-hostname k8s-worker-2
-sudo reboot
-```
+See the cloud_init.cfg for further information or to customize further
 
 ## Issues
 

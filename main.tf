@@ -1,5 +1,6 @@
 locals {
-  public_key       = "./.local/.ssh/id_rsa.pub"
+  masternodes = 1
+  workernodes = 2
 }
 
 provider libvirt {
@@ -24,24 +25,43 @@ resource libvirt_volume ubuntu1804_resized {
   base_volume_id = libvirt_volume.ubuntu1804_cloud.id
   pool           = libvirt_pool.local.name
   size           = 42949672960
-  count          = 3
+  count          = local.masternodes + local.workernodes
 }
 
 data template_file public_key {
   template = file("${path.module}/.local/.ssh/id_rsa.pub")
 }
 
-data template_file user_data {
+data template_file master_user_data {
+  count = local.masternodes
   template = file("${path.module}/cloud_init.cfg")
   vars = {
     public_key = data.template_file.public_key.rendered
+    hostname = "k8s-master-${count.index + 1}"
   }
 }
 
-resource libvirt_cloudinit_disk cloudinit_ubuntu {
-  name = "cloudinit_ubuntu_resized.iso"
+data template_file worker_user_data {
+  count = local.workernodes
+  template = file("${path.module}/cloud_init.cfg")
+  vars = {
+    public_key = data.template_file.public_key.rendered
+    hostname = "k8s-worker-${count.index + 1}"
+  }
+}
+
+resource libvirt_cloudinit_disk masternodes {
+  count = local.masternodes
+  name = "cloudinit_master_resized_${count.index}.iso"
   pool = libvirt_pool.local.name
-  user_data = data.template_file.user_data.rendered
+  user_data = data.template_file.master_user_data[count.index].rendered
+}
+
+resource libvirt_cloudinit_disk workernodes {
+  count = local.workernodes
+  name = "cloudinit_worker_resized_${count.index}.iso"
+  pool = libvirt_pool.local.name
+  user_data = data.template_file.worker_user_data[count.index].rendered
 }
 
 resource libvirt_network kube_network {
@@ -54,23 +74,23 @@ resource libvirt_network kube_network {
   }
 }
 
-
-resource libvirt_domain k8s_master {
-  name   = "k8s-master"
+resource libvirt_domain k8s_masters {
+  count = local.masternodes
+  name   = "k8s-master-${count.index+1}"
   memory = "4096"
   vcpu   = 2
 
-  cloudinit = libvirt_cloudinit_disk.cloudinit_ubuntu.id
+  cloudinit = libvirt_cloudinit_disk.masternodes[count.index].id
 
   network_interface {
     network_id     = libvirt_network.kube_network.id
-    hostname       = "k8s-master"
-    addresses      = ["172.16.1.11"]
+    hostname       = "k8s-master-${count.index+1}"
+    addresses      = ["172.16.1.1${count.index+1}"]
     wait_for_lease = true
   }
 
   disk {
-    volume_id = libvirt_volume.ubuntu1804_resized[0].id
+    volume_id = libvirt_volume.ubuntu1804_resized[count.index].id
   }
 
   console {
@@ -86,22 +106,23 @@ resource libvirt_domain k8s_master {
   }
 }
 
-resource libvirt_domain k8s_worker_1 {
-  name   = "k8s-worker-1"
+resource libvirt_domain k8s_workers {
+  count = local.workernodes
+  name   = "k8s-worker-${count.index + 1}"
   memory = "2048"
   vcpu   = 2
 
-  cloudinit = libvirt_cloudinit_disk.cloudinit_ubuntu.id
+  cloudinit = libvirt_cloudinit_disk.workernodes[count.index].id
 
   network_interface {
     network_id     = libvirt_network.kube_network.id
-    hostname       = "k8s-worker-1"
-    addresses      = ["172.16.1.21"]
+    hostname       = "k8s-worker-${count.index + 1}"
+    addresses      = ["172.16.1.2${count.index + 1}"]
     wait_for_lease = true
   }
 
   disk {
-    volume_id = libvirt_volume.ubuntu1804_resized[1].id
+    volume_id = libvirt_volume.ubuntu1804_resized[local.masternodes+count.index].id
   }
 
   console {
@@ -117,33 +138,33 @@ resource libvirt_domain k8s_worker_1 {
   }
 }
 
-resource libvirt_domain k8s_worker_2 {
-  name   = "k8s-worker-2"
-  memory = "2048"
-  vcpu   = 2
+# resource libvirt_domain k8s_worker_2 {
+#   name   = "k8s-worker-2"
+#   memory = "2048"
+#   vcpu   = 2
 
-  cloudinit = libvirt_cloudinit_disk.cloudinit_ubuntu.id
+#   cloudinit = libvirt_cloudinit_disk.cloudinit_ubuntu.id
 
-  network_interface {
-    network_id     = libvirt_network.kube_network.id
-    hostname       = "k8s-worker-2"
-    addresses      = ["172.16.1.22"]
-    wait_for_lease = true
-  }
+#   network_interface {
+#     network_id     = libvirt_network.kube_network.id
+#     hostname       = "k8s-worker-2"
+#     addresses      = ["172.16.1.22"]
+#     wait_for_lease = true
+#   }
 
-  disk {
-    volume_id = libvirt_volume.ubuntu1804_resized[2].id
-  }
+#   disk {
+#     volume_id = libvirt_volume.ubuntu1804_resized[2].id
+#   }
 
-  console {
-    type        = "pty"
-    target_type = "serial"
-    target_port = "0"
-  }
+#   console {
+#     type        = "pty"
+#     target_type = "serial"
+#     target_port = "0"
+#   }
 
-  graphics {
-    type        = "spice"
-    listen_type = "address"
-    autoport    = true
-  }
-}
+#   graphics {
+#     type        = "spice"
+#     listen_type = "address"
+#     autoport    = true
+#   }
+# }

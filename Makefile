@@ -3,6 +3,8 @@ SHELL := /bin/bash
 
 ROOT_PATH := $(abspath $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
 BIN_PATH := $(ROOT_PATH)/.local/bin
+KUBECONFIG_PATH ?= $(ROOT_PATH)/.local/kubeconfig
+TASK_PATH := $(ROOT_PATH)/tasks
 KEY_PATH := $(ROOT_PATH)/.local/.ssh
 KEY_NAME := $(KEY_PATH)/id_rsa
 
@@ -12,6 +14,7 @@ POOL_PATH ?= $(shell pwd)/volume_pool
 terraform := $(BIN_PATH)/terraform
 gh := $(BIN_PATH)/gh
 xpanes := $(BIN_PATH)/xpanes
+kubectl := kubectl --kubeconfig $(KUBECONFIG_PATH)/config
 
 # Generic shared variables
 ifeq ($(shell uname -m),x86_64)
@@ -143,8 +146,8 @@ ssh-all: ## Use xpanes/tmux to connect to all nodes at once!
 ssh-all-desync: ## Use xpanes/tmux to connect to all nodes at once!
 	$(xpanes) -d -c "ssh -i $(KEY_NAME) -o StrictHostKeyChecking=no {}" \
 	  ubuntu@$(shell $(terraform) output master_ip) \
-          ubuntu@$(shell $(terraform) output worker_1_ip) \
-          ubuntu@$(shell $(terraform) output worker_2_ip)
+	  ubuntu@$(shell $(terraform) output worker_1_ip) \
+	  ubuntu@$(shell $(terraform) output worker_2_ip)
 
 
 .PHONY: show
@@ -157,3 +160,20 @@ show: ## Show deployment information
 	@echo "MASTER NODE IP: $(shell $(terraform) output master_ip)"
 	@echo "WORKER 1 NODE IP: $(shell $(terraform) output worker_1_ip)"
 	@echo "WORKER 2 NODE IP: $(shell $(terraform) output worker_2_ip)"
+
+.PHONY: kube/configfile
+kube/get/configfile: ## Pull deployed kube config file from master
+	@rm -rf $(KUBECONFIG_PATH)
+	@mkdir -p $(KUBECONFIG_PATH)
+	@IP=$(shell $(terraform) output master_ip); \
+	  scp -o StrictHostKeyChecking=no -i $(KEY_NAME) ubuntu@$${IP}:.kube/config $(KUBECONFIG_PATH)/config
+
+kube/deploy/metallb: kube/get/configfile ## Deploy metallb on the cluster
+	$(kubectl) apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
+	$(kubectl) apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
+	$(kubectl) apply -f $(TASK_PATH)/metallb-config.yaml
+	$(kubectl) create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" || true
+
+kube/delete/metallb: ## Delete metallb deployment
+	$(kubectl) delete -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
+	$(kubectl) delete -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
