@@ -27,25 +27,21 @@ resource libvirt_volume ubuntu1804_resized {
   count          = 3
 }
 
+data template_file public_key {
+  template = file("${path.module}/.local/.ssh/id_rsa.pub")
+}
+
+data template_file user_data {
+  template = file("${path.module}/cloud_init.cfg")
+  vars = {
+    public_key = data.template_file.public_key.rendered
+  }
+}
+
 resource libvirt_cloudinit_disk cloudinit_ubuntu {
   name = "cloudinit_ubuntu_resized.iso"
   pool = libvirt_pool.local.name
-
-  user_data = <<EOF
-#cloud-config
-disable_root: 0
-ssh_pwauth: 1
-users:
-  - name: ubuntu
-    shell: /bin/bash
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    ssh-authorized-keys:
-      - ${file(local.public_key)}
-growpart:
-  mode: auto
-  devices: ['/']
-EOF
-
+  user_data = data.template_file.user_data.rendered
 }
 
 resource libvirt_network kube_network {

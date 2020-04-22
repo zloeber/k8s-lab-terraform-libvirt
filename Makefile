@@ -6,8 +6,8 @@ BIN_PATH := $(ROOT_PATH)/.local/bin
 KEY_PATH := $(ROOT_PATH)/.local/.ssh
 KEY_NAME := $(KEY_PATH)/id_rsa
 
-POOL_NAME ?= cka_lab_images
-POOL_PATH ?= $(shell pwd)/$(POOL_NAME)
+POOL_NAME ?= ubuntu
+POOL_PATH ?= $(shell pwd)/volume_pool
 
 terraform := $(BIN_PATH)/terraform
 gh := $(BIN_PATH)/gh
@@ -86,11 +86,6 @@ validate: ## Run terraform-validate against module
 # 	virsh pool-autostart $(POOL_NAME) || true
 # 	virsh pool-info $(POOL_NAME) || true
 
-# .PHONY: libvirt/pool/remove
-# libvirt/pool/remove: ## Removes local storage pool
-# 	virsh pool-destroy ${POOL_NAME} || true
-# 	virsh pool-undefine ${POOL_NAME} || true
-
 .PHONY: libvirt/domain/remove
 libvirt/clean: ## Removes any dangling libvirt domains and subnets
 	virsh destroy k8s-master || true
@@ -99,7 +94,10 @@ libvirt/clean: ## Removes any dangling libvirt domains and subnets
 	virsh undefine k8s-worker-1 || true
 	virsh destroy k8s-worker-2 || true
 	virsh undefine k8s-worker-2 || true
+	virsh net-destroy k8snet || true
 	virsh net-undefine k8snet || true
+	virsh pool-destroy ${POOL_NAME} || true
+	virsh pool-undefine ${POOL_NAME} || true
 
 .PHONY: clean
 clean: ## Clean local cached terreform elements
