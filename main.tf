@@ -1,4 +1,5 @@
 locals {
+  kube_version = "1.17.5"
   masternodes = 1
   workernodes = 2
 }
@@ -32,12 +33,25 @@ data template_file public_key {
   template = file("${path.module}/.local/.ssh/id_rsa.pub")
 }
 
+data template_file envvars {
+  template = file("${path.module}/envvars.tmpl")
+  vars = {
+    kube_version = local.kube_version
+  }
+}
+
+resource local_file envvars {
+  content  = data.template_file.envvars.rendered
+  filename = "${path.module}/envvars.env"
+}
+
 data template_file master_user_data {
   count = local.masternodes
   template = file("${path.module}/cloud_init.cfg")
   vars = {
     public_key = data.template_file.public_key.rendered
     hostname = "k8s-master-${count.index + 1}"
+    kube_version = local.kube_version
   }
 }
 
@@ -47,6 +61,7 @@ data template_file worker_user_data {
   vars = {
     public_key = data.template_file.public_key.rendered
     hostname = "k8s-worker-${count.index + 1}"
+    kube_version = local.kube_version
   }
 }
 

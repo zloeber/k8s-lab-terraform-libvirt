@@ -47,4 +47,4 @@ export KUBECONFIG=$(pwd)/.local/kubeconfig/config
 kubectl get nodes
 ```
 
-From here you should be ready to do any other excercizes required to study for the exam.
+From here you should be ready to do any other excercises required to study for the exam.
