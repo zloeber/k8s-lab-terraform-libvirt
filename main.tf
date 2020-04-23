@@ -152,34 +152,3 @@ resource libvirt_domain k8s_workers {
     autoport    = true
   }
 }
-
-# resource libvirt_domain k8s_worker_2 {
-#   name   = "k8s-worker-2"
-#   memory = "2048"
-#   vcpu   = 2
-
-#   cloudinit = libvirt_cloudinit_disk.cloudinit_ubuntu.id
-
-#   network_interface {
-#     network_id     = libvirt_network.kube_network.id
-#     hostname       = "k8s-worker-2"
-#     addresses      = ["172.16.1.22"]
-#     wait_for_lease = true
-#   }
-
-#   disk {
-#     volume_id = libvirt_volume.ubuntu1804_resized[2].id
-#   }
-
-#   console {
-#     type        = "pty"
-#     target_type = "serial"
-#     target_port = "0"
-#   }
-
-#   graphics {
-#     type        = "spice"
-#     listen_type = "address"
-#     autoport    = true
-#   }
-# }
