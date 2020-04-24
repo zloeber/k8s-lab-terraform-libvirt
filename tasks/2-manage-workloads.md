@@ -324,7 +324,8 @@ Docs:
 - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 - https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 
-Questions:
+**TASKS**
+
 - Create a deployment with the latest nginx image and scale the deployment to 4 replicas.
 
 <details><summary>Solution</summary>
@@ -334,18 +335,12 @@ Questions:
 kubectl create deployment scalable --image=nginx:latest
 kubectl scale deployment scalable --replicas=4
 kubectl get pods
-NAME                        READY   STATUS    RESTARTS   AGE
-scalable-5dd7b6d6f9-glrr5   1/1     Running   0          8s
-scalable-5dd7b6d6f9-qt89g   1/1     Running   0          8s
-scalable-5dd7b6d6f9-skc7f   1/1     Running   0          8s
-scalable-5dd7b6d6f9-xzb5d   1/1     Running   0          25s
-
 ```
-
 </p>
 </details>
 
-Questions:
+**TASKS**
+
 - Autoscale a deployment to have a minimum of two pods and a maximum of 6 pods and that transitions when cpu usage goes above 70%.
 
 <details><summary>Solution</summary>
@@ -363,26 +358,6 @@ kubectl create deployment autoscalable --image=nginx:latest
 kubectl autoscale deployment autoscalable --min=2 --max=6 --cpu-percent=70
 kubectl get hpa
 kubectl get pods
-NAME                            READY   STATUS    RESTARTS   AGE
-autoscalable-6494b9665b-s8rrs   1/1     Running   0          8m16s
-autoscalable-6494b9665b-vmdlt   1/1     Running   0          7m57s
 ```
-
-</p>
-</details>
-
-
-## Understand the primitives necessary to create self-healing applications
-
-Docs:
-- https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-- https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
-
-<details><summary>Solution</summary>
-<p>
-
-A deployment uses a replicaset object to maintain the right number of desired replicas of a pod.
-See section "Understand Deployments and how to perform rolling updates and rollbacks" above to see how deployments handle replicaset for updating.
-
 </p>
 </details>

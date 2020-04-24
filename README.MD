@@ -56,7 +56,11 @@ make ssh-worker2
 make ssh-all
 ```
 
-> **NOTE:** You can increase the number of master/worker nodes by updating the variables at the top of the main.tf file. The Makefile was only setup to work with the three nodes though as that's all you really need for most basic lab environments.
+You can increase the number of master/worker nodes by updating the variables at the top of the main.tf file. The Makefile was only setup to work with the three nodes though as that's all you really need for most basic lab environments.
+
+If you need to update/change the Kubernetes component versions please update the main.tf variables.
+
+**NOTE:** When you bring the lab up for the first time it may take a few minutes to install docker and become fully ready for a Kubernetes installation.
 
 ## Cloud Init
 

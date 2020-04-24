@@ -1,7 +1,8 @@
 locals {
-  kube_version = "1.17.5"
+  kube_version = "1.18.0"
   masternodes = 1
   workernodes = 2
+  subnet_node_prefix = "172.16.1"
 }
 
 provider libvirt {
@@ -79,15 +80,31 @@ resource libvirt_cloudinit_disk workernodes {
   user_data = data.template_file.worker_user_data[count.index].rendered
 }
 
-resource libvirt_network kube_network {
-  name      = "k8snet"
+resource libvirt_network kube_node_network {
+  name      = "kube_nodes"
   mode      = "nat"
   domain    = "k8s.local"
-  addresses = ["172.16.1.0/24"]
+  autostart = true
+  addresses = ["${local.subnet_node_prefix}.0/24"]
   dns {
     enabled = true
   }
 }
+
+# resource libvirt_network kube_ext_network {
+#   name      = "kube_ext"
+#   mode      = "nat"
+#   bridge    = "vbr1ext"
+#   domain    = "ext.k8s.local"
+#   autostart = true
+#   addresses = ["${local.subnet_ext_prefix}.0/24"]
+#   # dns {
+#   #   enabled = false
+#   # }
+#   dhcp {
+#     enabled = true
+#   }
+# }
 
 resource libvirt_domain k8s_masters {
   count = local.masternodes
@@ -98,9 +115,9 @@ resource libvirt_domain k8s_masters {
   cloudinit = libvirt_cloudinit_disk.masternodes[count.index].id
 
   network_interface {
-    network_id     = libvirt_network.kube_network.id
+    network_id     = libvirt_network.kube_node_network.id
     hostname       = "k8s-master-${count.index+1}"
-    addresses      = ["172.16.1.1${count.index+1}"]
+    addresses      = ["${local.subnet_node_prefix}.1${count.index+1}"]
     wait_for_lease = true
   }
 
@@ -130,9 +147,9 @@ resource libvirt_domain k8s_workers {
   cloudinit = libvirt_cloudinit_disk.workernodes[count.index].id
 
   network_interface {
-    network_id     = libvirt_network.kube_network.id
+    network_id     = libvirt_network.kube_node_network.id
     hostname       = "k8s-worker-${count.index + 1}"
-    addresses      = ["172.16.1.2${count.index + 1}"]
+    addresses      = ["${local.subnet_node_prefix}.2${count.index + 1}"]
     wait_for_lease = true
   }
 

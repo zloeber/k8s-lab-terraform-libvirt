@@ -1,4 +1,9 @@
-## Deploy Kubernetes (via kubeadm)
+**TASKS**
+
+- Deploy Kubernetes via kubeadm
+
+<details><summary>Solution</summary>
+<p>
 
 ```bash
 make ssh-master
@@ -34,10 +39,19 @@ make ssh-master
 kubectl get nodes
 ```
 
-Then deploy metallb as a loadbalancer.
+</p></details>
+
+**TASKS (additional)**
+
+- Deploy metallb as a loadbalancer
+
+<details><summary>Solution</summary>
+<p>
+
+Since this is local we use metallb to create services of type LoadBalancer on our cluster. This is not an exam item but would be required for testing out anything relating to loadbalancers in your testing. It has been almost entirely automated and only takes a minute to get deployed anyway.
 
 ```bash
-make kube/deploy/metallb
+make kube/clean kube/deploy/metallb
 ```
 
 The kube config file will have been pulled into the ./.local/kubeconfig/ folder when we get to this point. You can use this to optionally run any kubectl commands outside of the nodes by using the following command.
@@ -47,4 +61,4 @@ export KUBECONFIG=$(pwd)/.local/kubeconfig/config
 kubectl get nodes
 ```
 
-From here you should be ready to do any other excercises required to study for the exam.
+</p></detail>

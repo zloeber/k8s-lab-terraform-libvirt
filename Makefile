@@ -45,11 +45,10 @@ TF_VERSION ?= 0.12.23
 
 .PHONY: help
 help: ## Help
-	@echo 'Commands:'
-	@grep -E '^[a-zA-Z1-9_%/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@grep --no-filename -E '^[a-zA-Z1-9_/-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: deps
-deps: .dep/terraform .dep/keygen .dep/xpanes .dep/libvirt/provider ## Install terraform dependencies
+deps: .dep/terraform .dep/keygen .dep/xpanes .dep/libvirt/provider ## Install Dependencies
 
 .PHONY: .dep/terraform
 .dep/terraform: ## Install local terraform binary
@@ -91,8 +90,10 @@ libvirt/clean: ## Removes any dangling libvirt domains and subnets
 	virsh undefine k8s-worker-1 || true
 	virsh destroy k8s-worker-2 || true
 	virsh undefine k8s-worker-2 || true
-	virsh net-destroy k8snet || true
-	virsh net-undefine k8snet || true
+	virsh net-destroy kube_ext || true
+	virsh net-undefine kube_ext || true
+	virsh net-destroy kube_node || true
+	virsh net-undefine kube_node || true
 	virsh pool-destroy ${POOL_NAME} || true
 	virsh pool-undefine ${POOL_NAME} || true
 
@@ -130,14 +131,14 @@ ssh-worker2: ## connect to worker node 2
 	IP=$(shell $(terraform) output worker_2_ip); ssh -o StrictHostKeyChecking=no -i $(KEY_NAME) ubuntu@$${IP}
 
 .PHONY: ssh-all
-ssh-all: ## Use xpanes/tmux to connect to all nodes at once!
+ssh-all: ## Use xpanes/tmux to connect to all nodes at once (synced input)
 	$(xpanes) -c "ssh -i $(KEY_NAME) -o StrictHostKeyChecking=no {}" \
 	  ubuntu@$(shell $(terraform) output master_ip) \
 	  ubuntu@$(shell $(terraform) output worker_1_ip) \
       ubuntu@$(shell $(terraform) output worker_2_ip)
 
 .PHONY: ssh-all-desync
-ssh-all-desync: ## Use xpanes/tmux to connect to all nodes at once!
+ssh-all-desync: ## Use xpanes/tmux to connect to all nodes at once
 	$(xpanes) -d -c "ssh -i $(KEY_NAME) -o StrictHostKeyChecking=no {}" \
 	  ubuntu@$(shell $(terraform) output master_ip) \
 	  ubuntu@$(shell $(terraform) output worker_1_ip) \
@@ -180,6 +181,10 @@ kube/deploy/metallb: .dep/kubectl .kube/get/configfile ## Deploy metallb on the 
 	@$(kubectl) apply -f $(TASK_PATH)/metallb-config.yaml
 	@$(kubectl) create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" || true
 
+.PHONY: kube/deploy/metricsserver
+kube/deploy/metricsserver: .dep/kubectl .kube/get/configfile## Deploy metrics server
+	@$(kubectl) apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
+
 .PHONY: kube/delete/metallb
 kube/delete/metallb: ## Delete metallb deployment
 	@$(kubectl) delete -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
@@ -188,3 +193,8 @@ kube/delete/metallb: ## Delete metallb deployment
 .PHONY: kube/export/config
 kube/export/config: ## Displays the correct export command to point kubeconfig to this cluster
 	@echo 'export KUBECONFIG=$$(pwd)/.local/kubeconfig/config'
+
+.PHONY: kube/clean
+kube/clean: ## Remove old kube config and kubectl files
+	@rm -rf $(BIN_PATH)/kubectl
+	@rm -rf $(KUBECONFIG_PATH)/config
