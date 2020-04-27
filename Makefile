@@ -144,7 +144,6 @@ ssh/all/desync: ## Use xpanes/tmux to connect to all nodes at once
 	  ubuntu@$(shell $(terraform) output worker_1_ip) \
 	  ubuntu@$(shell $(terraform) output worker_2_ip)
 
-
 .PHONY: show
 show: ## Show deployment information
 	@echo "OS: $(OS)"
@@ -184,6 +183,10 @@ kube/deploy/metallb: .dep/kubectl .kube/get/configfile ## Deploy metallb on the 
 .PHONY: kube/deploy/metricsserver
 kube/deploy/metricsserver: .dep/kubectl .kube/get/configfile## Deploy metrics server
 	@$(kubectl) apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
+
+.PHONY: kube/deploy/localstorage
+kube/deploy/localstorage: .dep/kubectl .kube/get/configfile## Deploy metrics server
+	@$(kubectl) apply -f $(TASK_PATH)/local-storageclass.yaml
 
 .PHONY: kube/delete/metallb
 kube/delete/metallb: ## Delete metallb deployment

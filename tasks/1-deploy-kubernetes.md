@@ -85,3 +85,24 @@ kubectl get nodes
 ```
 
 </p></detail>
+
+**TASKS (additional)**
+
+- Deploy NFS as a persistent storage provider
+
+<details><summary>Solution</summary>
+<p>
+
+On each node within the `/root` path will be a set of files which can be used to bootstrap an nfs server as well as deploy nfs provisioner to the cluster.
+
+```bash
+# Assuming you are on the root node and your cluster has been fully deployed already,
+sudo su -
+chmod +x *.sh
+./install-nfs.sh
+./bootstrap-nfs-provisioner.sh
+```
+
+This also sets the default storage class to nfs-storage.
+
+</p></detail>
