@@ -46,14 +46,14 @@ make init plan create
 make destroy
 
 # Access the master node
-make ssh-master
+make ssh/master
 
 # or the worker nodes
-make ssh-worker1
-make ssh-worker2
+make ssh/worker1
+make ssh/worker2
 
 # or all the nodes at once with synchronized input
-make ssh-all
+make ssh/all
 ```
 
 You can increase the number of master/worker nodes by updating the variables at the top of the main.tf file. The Makefile was only setup to work with the three nodes though as that's all you really need for most basic lab environments.
@@ -107,3 +107,5 @@ sudo systemctl start libvirtd.service
 [xpanes for tmux](https://github.com/greymd/tmux-xpanes)
 
 [Cloud Init Examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
+
+[Kubernetes Static Volume Provisioner](https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner)

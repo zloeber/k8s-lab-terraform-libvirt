@@ -1,0 +1,1730 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+<hr>
+	<p><center>
+		<h1>Overview</h1>
+		<A HREF="#table0">K8S beginner Start here!!!</A><br>
+		<A HREF="#table1">Official-CKA-Docs</A><br>
+		<A HREF="#table2">CKA</A><br>
+		<A HREF="#table3">CheatSheet</A><br>
+		<A HREF="#table4">Kubeadm</A><br>
+		<A HREF="#table5">Logs</A><br>
+		<A HREF="#table6">HandyTools</A><br>
+		<A HREF="#table7">CKA-Blogs-Posts</A><br>
+		<A HREF="#table8">OtherHelpfulLinks</A><br>
+		<A HREF="#table9">Bookmark</A><br>
+		
+	</center></p>
+<hr>
+<A NAME="table0"><h1>Sheet 1: <em>K8S beginner Start here!!!</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="732"></colgroup>
+	<colgroup width="695"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font size=3 color="#000000">Link</font></b></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Description</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">https://training.linuxfoundation.org/training/kubernetes-fundamentals/</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Linux foundation kubernetes course (fundamentals will be not enough to pass the exam)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" size=4 color="#0000FF"><a href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/">https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/</a></font></u></td>
+		<td align="left" valign=bottom><b><font color="#000000">Udemy course (probably best comparing price and quality. I bought it for 15 $). Highly recomend it. </font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://linuxacademy.com/course/cloud-native-certified-kubernetes-administrator-cka/">https://linuxacademy.com/course/cloud-native-certified-kubernetes-administrator-cka/</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Linux Academy CKA course</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://cloudyuga.guru/courses/cka-online-self-paced">https://cloudyuga.guru/courses/cka-online-self-paced</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Just another CKA training course</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><u><font face="Cambria" color="#0000FF"><a href="https://www.manning.com/books/kubernetes-in-action">https://www.manning.com/books/kubernetes-in-action</a></font></u></b></td>
+		<td align="left" valign=bottom><b><font color="#000000">Holy Bible of Kubernetes</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><u><font face="Cambria" color="#0000FF"><a href="https://azure.microsoft.com/en-us/resources/kubernetes-up-and-running/">https://azure.microsoft.com/en-us/resources/kubernetes-up-and-running/</a></font></u></b></td>
+		<td align="left" valign=bottom><font color="#000000">This one you can get for free</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.katacoda.com/courses/kubernetes">https://www.katacoda.com/courses/kubernetes</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Interactive browser based kubernetes environment good point to start work with K8S. Contains various scenarios</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table1"><h1>Sheet 2: <em>Official-CKA-Docs</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="685"></colgroup>
+	<colgroup width="350"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font size=3 color="#000000">Link</font></b></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Description</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://training.linuxfoundation.org/cncf-certification-candidate-resources/">https://training.linuxfoundation.org/cncf-certification-candidate-resources/</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Main page for official exam resources</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://github.com/cncf/curriculum">https://github.com/cncf/curriculum</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Official exam curriculum (might be out of date)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://training.linuxfoundation.org/wp-content/uploads/2020/01/Important-Tips-CKA-CKAD-01.28.2020.pdf">https://training.linuxfoundation.org/wp-content/uploads/2020/01/Important-Tips-CKA-CKAD-01.28.2020.pdf</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Oficial exam tips (might be out of date)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://training.linuxfoundation.org/wp-content/uploads/2020/01/CKA-CKAD-Candidate-Handbook-v1.8.pdf">https://training.linuxfoundation.org/wp-content/uploads/2020/01/CKA-CKAD-Candidate-Handbook-v1.8.pdf</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Official exam candidate handbook (might be out of date)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.cncf.io/certification/cka/">https://www.cncf.io/certification/cka/</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Exam registration </font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table2"><h1>Sheet 3: <em>CKA</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="302"></colgroup>
+	<colgroup width="478"></colgroup>
+	<colgroup width="1072"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font size=4 color="#000000">Topic</font></b></td>
+		<td align="left" valign=top><b><font size=4 color="#000000">Subtopic</font></b></td>
+		<td align="left" valign=top><b><font size=4 color="#000000">Documentation Reference</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000">5% - Scheduling</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font size=4 color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><u><font color="#1155CC"><br></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=23 height="464" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td rowspan=12 align="left" valign=top><b><font color="#000000">Use label selectors to schedule Pods.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/">https://kubernetes.io/docs/concepts/configuration/assign-pod-node/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/">https://kubernetes.io/docs/concepts/configuration/assign-pod-node/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#0000FF"><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#label">https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#label</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector">https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodename">https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodename</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/">https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://theithollow.com/2019/07/29/kubernetes-taints-and-tolerations/">https://theithollow.com/2019/07/29/kubernetes-taints-and-tolerations/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity">https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity">https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity">https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Understand the role of DaemonSets.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/">https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/manage-daemon/rollback-daemon-set/">https://kubernetes.io/docs/tasks/manage-daemon/rollback-daemon-set/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Understand how resource limits can affect Pod scheduling.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/">https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/">https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/">https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Understand how to run multiple schedulers and how to configure Pods to use them.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/">https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/">https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Manually schedule a pod without a scheduler.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/static-pod/">https://kubernetes.io/docs/tasks/administer-cluster/static-pod/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Display scheduler events</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><br></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Know how to configure the Kubernetes scheduler.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/">https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#CCCCCC"><b><font color="#000000">8% - Application Lifecycle Management</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=19 height="399" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td rowspan=5 align="left" valign=top><b><font color="#000000">Understand Deployments and how to perform rolling updates and rollbacks.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">https://kubernetes.io/docs/concepts/workloads/controllers/deployment/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#updating-a-deployment">https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#updating-a-deployment</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/">https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://medium.com/faun/the-description-of-the-kubernetes-deployment-fields-7dc942237a73">https://medium.com/faun/the-description-of-the-kubernetes-deployment-fields-7dc942237a73</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">https://kubernetes.io/docs/concepts/services-networking/service/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Know how to scale applications.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment">https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Understand the primitives necessary to create a self-healing application.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=11 align="left" valign=top><b><font color="#000000">Know various ways to configure application</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://itnext.io/learn-how-to-configure-your-kubernetes-apps-using-the-configmap-object-d8f30f99abeb">https://itnext.io/learn-how-to-configure-your-kubernetes-apps-using-the-configmap-object-d8f30f99abeb</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://howchoo.com/g/nmu3mje4zjz/secure-your-sensitive-data-with-kubernetes-secrets">https://howchoo.com/g/nmu3mje4zjz/secure-your-sensitive-data-with-kubernetes-secrets</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/configuration/secret/">https://kubernetes.io/docs/concepts/configuration/secret/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/">https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/inject-data-application/">https://kubernetes.io/docs/tasks/inject-data-application/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.tutorialspoint.com/kubernetes/kubernetes_jobs.htm">https://www.tutorialspoint.com/kubernetes/kubernetes_jobs.htm</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/job/">https://kubernetes.io/docs/tasks/job/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/google-cloud/kubernetes-running-background-tasks-with-batch-jobs-56482fbc853">https://medium.com/google-cloud/kubernetes-running-background-tasks-with-batch-jobs-56482fbc853</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.ostechnix.com/a-beginners-guide-to-cron-jobs/">https://www.ostechnix.com/a-beginners-guide-to-cron-jobs/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/storage/volumes/#configmap">https://kubernetes.io/docs/concepts/storage/volumes/#configmap</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=top><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/">https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=top><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/">https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#CCCCCC"><b><font color="#000000">5% - Logging/Monitoring</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=8 height="168" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Understand how to monitor all<br>cluster components.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/monitor-node-health/">https://kubernetes.io/docs/tasks/debug-application-cluster/monitor-node-health/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Understand how to monitor application</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application-introspection/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application-introspection/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Manage cluster component log</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/logging/#logging-at-the-node-level">https://kubernetes.io/docs/concepts/cluster-administration/logging/#logging-at-the-node-level</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Manage application log</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/logging/#logging-at-the-node-level">https://kubernetes.io/docs/concepts/cluster-administration/logging/#logging-at-the-node-level</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#D9D9D9"><b><font color="#000000">11% - Cluster</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=5 height="105" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=top><b><font color="#000000">Understand Kubernetes cluster upgrade process.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/">https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Facilitate operating system upgrades.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/#maintenance-on-a-node">https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/#maintenance-on-a-node</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Implement backup and restore methodologies.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/">https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#restoring-an-etcd-cluster">https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#restoring-an-etcd-cluster</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#EFF0F1"><u><font color="#1155CC"><a href="https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md">https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#CCCCCC"><b><font color="#000000">12% - Security</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=21 height="441" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Know how to configure authentication and authorization.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/">https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">https://kubernetes.io/docs/reference/access-authn-authz/rbac/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://docs.bitnami.com/kubernetes/how-to/configure-rbac-in-your-kubernetes-cluster/">https://docs.bitnami.com/kubernetes/how-to/configure-rbac-in-your-kubernetes-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=5 align="left" valign=top><b><font color="#000000">Know to configure network policies.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">https://kubernetes.io/docs/concepts/services-networking/network-policies/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/">https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d">https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#0000FF"><a href="https://github.com/ahmetb/kubernetes-network-policy-recipes">https://github.com/ahmetb/kubernetes-network-policy-recipes</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#0000FF"><a href="https://orca.tufin.io/netpol/">https://orca.tufin.io/netpol/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=8 align="left" valign=top><b><font color="#000000">Create and manage TLS certificates for cluster components.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/">https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/setup/best-practices/certificates/">https://kubernetes.io/docs/setup/best-practices/certificates/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/tls/certificate-rotation/">https://kubernetes.io/docs/tasks/tls/certificate-rotation/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/">https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/04-certificate-authority.md">https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/04-certificate-authority.md</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/certificates/">https://kubernetes.io/docs/concepts/cluster-administration/certificates/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/05-kubernetes-configuration-files.md">https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/05-kubernetes-configuration-files.md</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/">https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Understand Kubernetes security<br>primitives.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/security/overview/">https://kubernetes.io/docs/concepts/security/overview/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Work with images securely.</font></b></td>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry">https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/containers/images/">https://kubernetes.io/docs/concepts/containers/images/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Define security contexts.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">https://kubernetes.io/docs/tasks/configure-pod-container/security-context/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Secure persistent key value store.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/configuration/secret/">https://kubernetes.io/docs/concepts/configuration/secret/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#D9D9D9"><b><font color="#000000">7% - Storage</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=13 height="273" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Understand persistent volumes and know how to create them.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">https://kubernetes.io/docs/concepts/storage/persistent-volumes/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#claims-as-volumes">https://kubernetes.io/docs/concepts/storage/persistent-volumes/#claims-as-volumes</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/limit-storage-consumption/">https://kubernetes.io/docs/tasks/administer-cluster/limit-storage-consumption/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/">https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Understand access modes for volumes.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Understand persistent volume claims primitive.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/#why-change-reclaim-policy-of-a-persistentvolume">https://kubernetes.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/#why-change-reclaim-policy-of-a-persistentvolume</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/">https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Understand Kubernetes storage objects.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes">https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">https://kubernetes.io/docs/concepts/storage/storage-classes/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner">https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Know how to configure applications with persistent storage.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/">https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/">https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#CCCCCC"><b><font color="#000000">10% - Troubleshooting</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=6 height="126" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Troubleshoot application failure</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://learnk8s.io/troubleshooting-deployments">https://learnk8s.io/troubleshooting-deployments</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Troubleshoot control plane failure</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Troubleshoot worker node failure.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Troubleshoot networking</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/network.md">https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/network.md</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://www.digitalocean.com/community/tutorials/how-to-inspect-kubernetes-networking">https://www.digitalocean.com/community/tutorials/how-to-inspect-kubernetes-networking</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#CCCCCC"><b><font color="#000000">19% - Core Concepts</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=4 height="84" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=top><b><font color="#000000">Understand the Kubernetes API primitives</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/overview/kubernetes-api/">https://kubernetes.io/docs/concepts/overview/kubernetes-api/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Understand the Kubernetes cluster<br>architecture.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/overview/components/">https://kubernetes.io/docs/concepts/overview/components/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/architecture/nodes/">https://kubernetes.io/docs/concepts/architecture/nodes/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Understand Services and other<br>network primitives.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/services-networking/">https://kubernetes.io/docs/concepts/services-networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#CCCCCC"><b><font color="#000000">11% - Networking</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=25 height="525" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Understand the networking configuration<br>on the cluster node</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">https://kubernetes.io/docs/concepts/cluster-administration/networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://www.stackrox.com/post/2020/01/kubernetes-networking-demystified/?utm_content=buffera6278&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">https://www.stackrox.com/post/2020/01/kubernetes-networking-demystified/?utm_content=buffera6278&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Understand Pod networking concepts</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">https://kubernetes.io/docs/concepts/cluster-administration/networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=3 align="left" valign=top><b><font color="#000000">Understand service networking.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">https://kubernetes.io/docs/concepts/services-networking/service/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">https://kubernetes.io/docs/concepts/services-networking/service/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.katacoda.com/courses/kubernetes/networking-introduction">https://www.katacoda.com/courses/kubernetes/networking-introduction</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Deploy and configure network load balance</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">https://kubernetes.io/docs/concepts/cluster-administration/networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Know how to use Ingress rules.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">https://kubernetes.io/docs/concepts/services-networking/ingress/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=5 align="left" valign=top><b><font color="#000000">Know how to configure and use the<br>cluster DNS.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/">https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/">https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://sysdig.com/blog/understanding-how-kubernetes-services-dns-work/">https://sysdig.com/blog/understanding-how-kubernetes-services-dns-work/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/12-dns-addon.md">https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/docs/12-dns-addon.md</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=11 align="left" valign=top><b><font color="#000000">Understand CNI.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">https://kubernetes.io/docs/concepts/cluster-administration/networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/">https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/">https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://neuvector.com/network-security/advanced-kubernetes-networking/">https://neuvector.com/network-security/advanced-kubernetes-networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://gokube.io/media/Diving-Deep-Into-Kubernetes-Networking.pdf">https://gokube.io/media/Diving-Deep-Into-Kubernetes-Networking.pdf</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/faun/introduction-to-kubernetes-networking-c80fd6a83bc1">https://medium.com/faun/introduction-to-kubernetes-networking-c80fd6a83bc1</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.digitalocean.com/community/tutorials/how-to-inspect-kubernetes-networking">https://www.digitalocean.com/community/tutorials/how-to-inspect-kubernetes-networking</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://thenewstack.io/hackers-guide-kubernetes-networking/">https://thenewstack.io/hackers-guide-kubernetes-networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">https://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://blogs.igalia.com/dpino/2016/04/10/network-namespaces/">https://blogs.igalia.com/dpino/2016/04/10/network-namespaces/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://josedonizetti.github.io/cni/namespace/bridge/linux/network/2017/10/22/container-networking-bridge.html">https://josedonizetti.github.io/cni/namespace/bridge/linux/network/2017/10/22/container-networking-bridge.html</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#CCCCCC"><b><font color="#000000">12% - Installation, Configuration &amp; Validation</font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=top bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td rowspan=25 height="525" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=top><b><font color="#000000">Design a Kubernetes cluster</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/cluster-administration-overview/#planning-a-cluster">https://kubernetes.io/docs/concepts/cluster-administration/cluster-administration-overview/#planning-a-cluster</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=2 align="left" valign=top><b><font color="#000000">Install Kubernetes masters and nodes</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/">https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/setup/independent/control-plane-flags/">https://kubernetes.io/docs/setup/independent/control-plane-flags/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=6 align="left" valign=top><b><font color="#000000">Configure secure cluster communication</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/">https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/">https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/">https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/better-programming/k8s-tips-give-access-to-your-clusterwith-a-client-certificate-dfb3b71a76fe">https://medium.com/better-programming/k8s-tips-give-access-to-your-clusterwith-a-client-certificate-dfb3b71a76fe</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#api-overview">https://kubernetes.io/docs/reference/access-authn-authz/rbac/#api-overview</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://docs.bitnami.com/kubernetes/how-to/configure-rbac-in-your-kubernetes-cluster/">https://docs.bitnami.com/kubernetes/how-to/configure-rbac-in-your-kubernetes-cluster/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Configure a Highly-Available Kubernetes<br>cluster.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/setup/independent/high-availability/">https://kubernetes.io/docs/setup/independent/high-availability/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Know where to get the Kubernetes<br>release binaries.</font></b></td>
+		<td align="left" valign=top><u><font color="#1155CC"><a href="https://kubernetes.io/docs/setup/release/building-from-source/#designing-and-preparing">https://kubernetes.io/docs/setup/release/building-from-source/#designing-and-preparing</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Provision underlying infrastructure to<br>deploy a Kubernetes cluster</font></b></td>
+		<td align="left" valign=top><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Choose a network solution</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">https://kubernetes.io/docs/concepts/cluster-administration/networking/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Choose your Kubernetes infrastructure<br>configuration.</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/setup/">https://kubernetes.io/docs/setup/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Run end-to-end tests on your cluster</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://radu-matei.com/blog/kubernetes-e2e-kind-brigade/">https://radu-matei.com/blog/kubernetes-e2e-kind-brigade/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Analyse end-to-end tests results</font></b></td>
+		<td align="left" valign=top><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><b><font color="#000000">Run Node end-to-end test</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/">https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/</a></font></u></td>
+	</tr>
+	<tr>
+		<td rowspan=8 align="left" valign=top><b><font color="#000000">Install and use kubeadm to install, configure,<br>and manage Kubernetes clusters</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/">https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://github.com/kubernetes/kubeadm">https://github.com/kubernetes/kubeadm</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFFFFF"><u><font face="Roboto" color="#1155CC"><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><b><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/</a></font></u></b></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.katacoda.com/courses/kubernetes/getting-started-with-kubeadm">https://www.katacoda.com/courses/kubernetes/getting-started-with-kubeadm</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFFFFF"><u><font color="#1155CC"><a href="https://platform9.com/blog/kubernetes-upgrade-the-definitive-guide-to-do-it-yourself/">https://platform9.com/blog/kubernetes-upgrade-the-definitive-guide-to-do-it-yourself/</a></font></u></td>
+	</tr>
+	<tr>
+		<td align="left" valign=bottom bgcolor="#FFFFFF"><u><font color="#1155CC"><a href="https://stackoverflow.com/questions/49721708/how-to-install-specific-version-of-kubernetes">https://stackoverflow.com/questions/49721708/how-to-install-specific-version-of-kubernetes</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=top><b><font color="#000000"><br></font></b></td>
+		<td align="left" valign=bottom bgcolor="#FFFFFF"><u><font color="#1155CC"><a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/">https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#999999"><b><font color="#000000">P.S.</font></b></td>
+		<td rowspan=2 align="left" valign=top bgcolor="#999999"><b><font color="#000000">Install your own kubernetes cluster HA without kubeadm tool. This will let you better understand how everything works in K8S</font></b></td>
+		<td align="left" valign=top bgcolor="#999999"><u><font face="Cambria" color="#0000FF"><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">https://github.com/kelseyhightower/kubernetes-the-hard-way</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="36" align="left" valign=bottom bgcolor="#999999"><font color="#000000"><br></font></td>
+		<td align="left" valign=top bgcolor="#999999"><u><font face="Cambria" color="#0000FF"><a href="https://github.com/mmumshad/kubernetes-the-hard-way">https://github.com/mmumshad/kubernetes-the-hard-way</a></font></u></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table3"><h1>Sheet 4: <em>CheatSheet</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="1035"></colgroup>
+	<colgroup width="1014"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=top bgcolor="#D9D9D9"><b><font size=4 color="#000000"> </font></b></td>
+		<td align="left" valign=top bgcolor="#D9D9D9"><b><font size=4 color="#000000">Description</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">source &lt;(kubectl completion bash)</font></b></td>
+		<td align="left" valign=top><font color="#000000">Enable auto completion for kubectl</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">source &lt;(etcdctl completion bash)</font></b></td>
+		<td align="left" valign=top><font color="#000000">Enable auto completion etcdctl</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">source &lt;(kubeadm completion bash)</font></b></td>
+		<td align="left" valign=top><font color="#000000">Enable auto completion for kubeadm</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">export KUBE_EDITOR=&quot;nano</font></b></td>
+		<td align="left" valign=top><font color="#000000">Temporary change default editor for kubernetes. When you will run kubectl edit &quot;resource&quot; &quot;resource name&quot; nano text editor will be used insted of vim </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl api-versions</font></b></td>
+		<td align="left" valign=top><font color="#000000">List api versions</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl api-resources</font></b></td>
+		<td align="left" valign=top><font color="#000000">Print the supported API resources on the server</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl explain </font></b></td>
+		<td align="left" valign=top><font color="#000000">Explain kubernetes resources (Might be very handy during resource definitions files creation)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get pods --all-namespaces --no-headers | wc -l</font></b></td>
+		<td align="left" valign=top><font color="#000000">Count pods</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/">https://kubernetes.io/</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Home of Kubernetes Docs. It's allowed to use all docs under kubernetes.io domain during the exam</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top bgcolor="#FFFFFF"><u><font face="Medium-content-serif-font" color="#0000FF"><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">https://kubernetes.io/docs/reference/kubectl/cheatsheet</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">kubectl Cheat Sheet (Must have)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://discuss.kubernetes.io/">https://discuss.kubernetes.io/</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Kubernetes forum might help to find solution for problem</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands">https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Quick look on to kubectl commands</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/reference/kubectl/conventions/">https://kubernetes.io/docs/reference/kubectl/conventions/</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Recommended usage conventions for kubectl</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Information about all available resources, operations, and API groups</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://github.com/kubernetes/kubernetes">https://github.com/kubernetes/kubernetes</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Allowed to use during exam</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">ETCDCTL_API=3 etcdctl --endpoints https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt --key /etc/kubernetes/pki/etcd/healthcheck-client.key snapshot save ./snapshot.db</font></b></td>
+		<td align="left" valign=top><font color="#000000">Backup etcd inside when cluster deployed via kubeadm</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl taint node node01 hardware=slow:NoSchedule</font></b></td>
+		<td align="left" valign=top><font color="#000000">Taint node with key hardware value=slow effect= NoSchedule. Possible over effects NoExecute, PreferNoSchedule</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl taint node node01 hardware:NoSchedule-</font></b></td>
+		<td align="left" valign=top><font color="#000000">Remove taint from node</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl taint nodes master01 node-role.kubernetes.io/master:NoSchedule-</font></b></td>
+		<td align="left" valign=top><font color="#000000">Remove default taint from master node</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=run-pod/v1 test-nslookup --image=busybox:1.28 --rm -it</font></b></td>
+		<td align="left" valign=top><font color="#000000">Creates a pod and run interactive shell. Pod will be deleted as soon as you will exit the shell. Perfect for troubleshooting. </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=run-pod/v1 busybox --image=busybox:1.28 --command -- sleep 3600</font></b></td>
+		<td align="left" valign=top><font color="#000000">Deploy a busybox pod. Busy box is a small container wich contains a lot of different usefull utilities and they might be very useful for internal cluster troubleshooting tasks.</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=run-pod/v1 nginx --image=nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">Create an NGINX Pod</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=run-pod/v1 nginx --image=nginx --dry-run -o yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run) --export  for YAML without cluster specific information<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=deployment/v1beta1 nginx --image=nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">Create a deployment</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">Generate Deployment YAML file (-o yaml). Don't create it(--dry-run) with 4 Replicas (--replicas=4)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml &gt; nginx-deployment.yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">Save it to a file - (If you need to modify or add some other details before actually creating it)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl run --generator=job/v1</font></b></td>
+		<td align="left" valign=top><font color="#000000">Create a job</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl expose deployment nginx --port=80 --name=my-nginx-svc --type=Loadbalancer</font></b></td>
+		<td align="left" valign=top><font color="#000000">Create a service that uses an external load balancer and points to a 4 pod deployment running nginx.</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl expose pod redis --port=6379 --name redis-service --dry-run -o yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">Create a Service named redis-service of type ClusterIP to expose pod redis on port 6379. This will automatically use the pod's labels as selectors</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl create service clusterip redis --tcp=6379:6379 --dry-run -o yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">This will not use the pods labels as selectors, instead it will assume selectors as app=redis. You cannot pass in selectors as an option. So it does not work very well if your pod has a different label set. So generate the file and modify the selectors before creating the service)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl expose pod nginx --port=80 --name nginx-service --dry-run -o yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">Create a Service named nginx of type NodePort to expose pod nginx's port 80 on port 30080 on the nodes:This will automatically use the pod's labels as selectors, but you cannot specify the node port. You have to generate a definition file and then add the node port in manually before creating the service with the pod.)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">This will not use the pods labels as selectors</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get pods -o=&quot;custom-columns=PODS:.metadata.name,Images:.spec.containers[*]&quot;</font></b></td>
+		<td align="left" valign=top><font color="#000000">List pods and images</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl exec nginx -i -t bash</font></b></td>
+		<td align="left" valign=top><font color="#000000">Open a bash terminal in a pod</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl describe pods nginx | grep -ie image -ie name</font></b></td>
+		<td align="left" valign=top><font color="#000000">Grep pod name and image name</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl exec nginx -i -t -c &quot;container name (optional)&quot;-- bash -il</font></b></td>
+		<td align="left" valign=top><font color="#000000">Execute command in the pod container (double dash is required when you want to provide an argument for command which will be executed inside container)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl top (node, pod)</font></b></td>
+		<td align="left" valign=top><font color="#000000">Check Performance</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl set resources deployment nginx -c=nginx --limits=memory=512Mi</font></b></td>
+		<td align="left" valign=top><font color="#000000">Customize resource definition</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl set resources deployment nginx -c=nginx --limits=cpu=200m</font></b></td>
+		<td align="left" valign=top><font color="#000000">Customize resource definition</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">echo -n ’mypasswd’, then redirect to base64 --decode</font></b></td>
+		<td align="left" valign=top><font color="#000000">echo -n ’mypasswd’, then redirect to base64 --decode</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl create secret generic db-user-pass –from-file=./username.txt</font></b></td>
+		<td align="left" valign=top><font color="#000000">Generate secret</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl cp /tmp/my &lt;some-namespace&gt;/&lt;some-pod&gt;:/tmp/server</font></b></td>
+		<td align="left" valign=top><font color="#000000">Copy local file to pod</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl cp &lt;some-namespace&gt;/&lt;some-pod&gt;:/tmp/server /tmp/my</font></b></td>
+		<td align="left" valign=top><font color="#000000">Copy pod file to local</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get events –sort-by=.metadata.creationTimestamp</font></b></td>
+		<td align="left" valign=top><font color="#000000">List Events sorted by timestamp</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl edit deployment nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">Opens the object’s manifest in your default editor. After making changes, saving the file, and exiting the editor, the object is updated.</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl patch svc $svc_name -p ’{&quot;spec&quot;: {&quot;type&quot;: &quot;LoadBalancer&quot;}}’<br></font></b></td>
+		<td align="left" valign=top><font color="#000000">Change service type to loadbalancer.  Patch command is useful for modifying a single property or a limited number of properties of a resource without having to edit its definition in a text editor</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl scale --current-replicas=2 --replicas=3 deployment/mysql</font></b></td>
+		<td align="left" valign=top><font color="#000000">Quickly scale deployment to 3 pods if current replica count is 2. This could any controller like replicaset (rs) or replication controller (rc)</font></td>
+	</tr>
+	<tr>
+		<td height="38" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl apply -f nginx.yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">Modifies the object by applying property values from a full YAML or JSON file. If the object specified in the YAML/JSON doesn’t exist yet, it’s created. The file needs to contain the full definition of the resource (it can’t include only the fields you want to update, as is the case with kubectl patch).<br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl replace -f nginx-deployment-v2.yaml</font></b></td>
+		<td align="left" valign=top><font color="#000000">Replaces the object with a new one from a YAML/JSON file. In contrast to the apply command, this command requires the object to<br>exist; otherwise it prints an error</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl set image deployment &lt;deployment-name&gt; &lt;container-name&gt;=new_image:img_version --record</font></b></td>
+		<td align="left" valign=top><font color="#000000">Changes the container image defined in a Pod, ReplicationController’s template, Deployment, DaemonSet, Job, or ReplicaSet. For deployment this will initiate a rolling update according the update strategy (RollingUpdate(default) or Recreate). Current example is for deployment. Remember the --record command-line option you used when creating the Deployment as this will set appropriate versions numebers for your deployments.</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl rollout undo deployment nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">Rollback the deployment to the previuos version. undo command can also be used while the rollout process is still in progress to essentially abort the rollout</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl rollout history deployment nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">View revision history of deployment. Remember the --record command-line option you used when creating the Deployment</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl rollout undo deployment nginx --to-revision=1</font></b></td>
+		<td align="left" valign=top><font color="#000000">Rollback to a specfic deployment revision version </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl rollout pause deployment nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">Pause the deployment. Usefull for canary releases -  when you replace only one or a small number of old pods with new ones. This way only a small number of users will initially hit the new version</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl rollout resume deployment nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">Resume paused deployment. </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl rolling-update nginx-v1 nginx-v2 --image=nginx:v2</font></b></td>
+		<td align="left" valign=top><font color="#000000">Perform a rolling update for the replica set. Depricated use deployment rollouts instead.</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get pod -v 6,7,8,9</font></b></td>
+		<td align="left" valign=top><font color="#000000">Debugging mode shows what exactly happens with your request. Higher number means higher verbosity</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">Kubectl auth can-i delete pods</font></b></td>
+		<td align="left" valign=top><font color="#000000">Check for allowed actions</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">Kubectl auth can-i delete pods —as dev-user </font></b></td>
+		<td align="left" valign=top><font color="#000000">Check for allowed permission as another user</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs &quot;pod name here&quot; -n kube-system --all-containers=true --tail 20</font></b></td>
+		<td align="left" valign=top><font color="#000000">Get logs from pod from all container and show only last 20 lines</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs -p -c ruby web-1</font></b></td>
+		<td align="left" valign=top><font color="#000000">Return logs of previous terminated ruby container logs from pod web-1</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs -f -c ruby web-1</font></b></td>
+		<td align="left" valign=top><font color="#000000">Begin streaming the logs of the ruby container in pod web-1</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs -f -lapp=nginx --all-containers=true</font></b></td>
+		<td align="left" valign=top><font color="#000000">Begin streaming the logs from all containers in pods defined by label app=nginx</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs --since=1h nginx</font></b></td>
+		<td align="left" valign=top><font color="#000000">Show all logs from pod nginx written in the last hour</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs deployment/nginx -c nginx-1</font></b></td>
+		<td align="left" valign=top><font color="#000000">Return snapshot logs from container nginx-1 of a deployment named nginx</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs job/hello</font></b></td>
+		<td align="left" valign=top><font color="#000000">Return snapshot logs from first container of a job named hello</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')</font></b></td>
+		<td rowspan=2 align="left" valign=top><font color="#000000">Tip how to run kubectl and pass the result to another kubectl</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl logs --namespace=kube-system $(kubectl get pods --namespace=kube-system -l k8s-app=kube-dns -o name | head -1) -c kubedns</font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">for p in $(kubectl get pods --namespace=kube-system -l k8s-app=kube-dns -o name); do kubectl logs --namespace=kube-system $p; done</font></b></td>
+		<td align="left" valign=top><font color="#000000">Useful loop to retrieve logs from several pods</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">sudo cp /etc/kubernetes/admin.conf $HOME/<br>sudo chown $(id -u):$(id -g) $HOME/admin.conf<br>export KUBECONFIG=$HOME/admin.conf</font></b></td>
+		<td align="left" valign=top><font color="#000000">To manage the Kubernetes cluster, the client configuration and certificates are required. This configuration is created when kubeadm initialises the cluster. The command copies the configuration to the users home directory and sets the environment variable for use with the CLI</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get cluster-info</font></b></td>
+		<td align="left" valign=top><font color="#000000">Get General info about cluster</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">docker ps -a </font></b></td>
+		<td align="left" valign=top><font color="#000000">List containers</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top bgcolor="#FFFFFF"><b><font face="Roboto Mono" color="#000000">docker logs &quot;container id&quot; --details</font></b></td>
+		<td align="left" valign=top><font color="#000000">View the docker container logs with extra details</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top bgcolor="#FFFFFF"><b><font face="Roboto Mono" color="#000000">docker inspect &quot;container id&quot;</font></b></td>
+		<td align="left" valign=top><font color="#000000">Return low-level information on Docker objects</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">journalctl -u docker.service (kubelet.service; kube-proxy, kube-apiserver, kube-controller-manager, kube-scheduler)</font></b></td>
+		<td align="left" valign=top bgcolor="#FFFFFF"><font color="#000000">View system logs for certain components (in case of kubeadm installation kube-proxy, kube-apiserver, kube-controller-manager, kube-scheduler will be deployed as pods)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl status kubelet.service </font></b></td>
+		<td align="left" valign=top bgcolor="#FFFFFF"><font color="#000000">Check the status of kubelet service unit</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl enable kubelet.service</font></b></td>
+		<td align="left" valign=top bgcolor="#FFFFFF"><font color="#000000">Enable kubelet service to start automatically</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl edit kubelet.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">Edit kubelet service (Typically when you editing service it creates drop-in files in /etc/systemd/system/kubelet.service.d and overrided default directory for service config which is in this case /etc/systemd/system/kubelet.service.d )</font></td>
+	</tr>
+	<tr>
+		<td height="26" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl daemon-reload<br></font></b></td>
+		<td align="left" valign=top><font color="#000000">After changing systemd service file reload the daemon </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#FFFFFF"><b><font face="Roboto Mono" color="#000000">systemctl restart kubelet.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">After changing systemd service file rereloading the daemon restart the service</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#FFFFFF"><b><font face="Roboto Mono" color="#000000">systemctl enable kubelet<br>systemctl start kubelet</font></b></td>
+		<td align="left" valign=top><font color="#000000">If service is not started</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#FFFFFF"><b><font face="Roboto Mono" color="#000000">systemctl cat kubelet.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">Show the unit file</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom bgcolor="#FFFFFF"><b><font face="Roboto Mono" color="#000000">systemctl show kubelet.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">Show all parameters of the service</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">nslookup my.domain.com (might be useful for solving DNS problems )</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://www.computerhope.com/unix/unslooku.htm">https://www.computerhope.com/unix/unslooku.htm</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">iptables (might be useful for network issues troubleshooting)</font></b></td>
+		<td align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://www.booleanworld.com/depth-guide-iptables-linux-firewall">https://www.booleanworld.com/depth-guide-iptables-linux-firewall</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">curl http://google.com</font></b></td>
+		<td align="left" valign=top><font color="#000000">Hit web link</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">wget -q --show-progress --https-only --timestamping \<br>  &quot;https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-apiserver&quot; \<br>  &quot;https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-controller-manager&quot; \<br>  &quot;https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-scheduler&quot; \<br>  &quot;https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl&quot; \      <br>  &quot;https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubelet&quot; \<br>  &quot;https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-proxy&quot; \</font></b></td>
+		<td align="left" valign=top><font color="#000000">Download kubernetes binaries (change version number for your desired)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">chmod +x kubectl kube-apiserver kube-controller-manager kubelet kube-proxy kube-scheduler</font></b></td>
+		<td align="left" valign=top><font color="#000000">Give executable permissions </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">ip address/link/route list/add</font></b></td>
+		<td align="left" valign=top><font color="#000000">Network configuration utility </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font color="#000000">Ps -aux | grep kubelet</font></b></td>
+		<td align="left" valign=top><font color="#000000">Check the kubelet process</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">scp .\config andrej@master01:.\</font></b></td>
+		<td align="left" valign=top><font color="#000000">Secure copy file over ssh</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt \<br>     --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \<br>     snapshot save /tmp/snapshot-pre-boot.db</font></b></td>
+		<td align="left" valign=top><font color="#000000">Backup ETCD</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt \<br>     --name=master \<br>     --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \<br>     --data-dir /var/lib/etcd-from-backup \<br>     --initial-cluster=master=https://127.0.0.1:2380 \<br>     --initial-cluster-token etcd-cluster-1 \<br>     --initial-advertise-peer-urls=https://127.0.0.1:2380 \<br>     snapshot restore /tmp/snapshot-pre-boot.db</font></b></td>
+		<td align="left" valign=top><font color="#000000">Restore ETCD</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">Update --data-dir to use new target location<br>--data-dir=/var/lib/etcd-from-backup<br>Update new initial-cluster-token to specify new cluster<br>--initial-cluster-token=etcd-cluster-1<br>Update volumes and volume mounts to point to new path</font></b></td>
+		<td align="left" valign=top><font color="#000000">Post restore task in ETCD config file in case of kubeadm based install edit static pod manifest file</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">openssl req -in mycsr.csr -noout -text</font></b></td>
+		<td align="left" valign=top><font color="#000000">Read the certificate signing request</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">openssl x509 -in mycrt.crt --noout -text</font></b></td>
+		<td align="left" valign=top><font color="#000000">Read the certificate (for example check expire date and etc. )</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">cat andrej.csr | base64 | tr -d '\n'</font></b></td>
+		<td align="left" valign=top><font color="#000000">Prepare csr data to be added to certificate signing request yaml</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">openssl genrsa -out mykey.key 2048 | openssl genrsa -out ca.key 2048</font></b></td>
+		<td align="left" valign=top><font color="#000000">Generate a key</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">openssl req -x509 -new -nodes -key ca.key -subj &quot;/CN=${MASTER_IP}&quot; -days 10000 -out ca.crt </font></b></td>
+		<td align="left" valign=top><font color="#000000">According to the ca.key generate a ca.crt (use -days to set the certificate effective time):</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">openssl req -new -key mykey.key -out mycsr.csr -subj &quot;/CN=kube-admin/O=system:masters&quot;</font></b></td>
+		<td align="left" valign=top><font color="#000000">Generate a signing request (example)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">openssl x509 -req -in mycsr.csr -CA ca.crt -CAkey ca.key \<br>-CAcreateserial -out server.crt -days 10000 <br></font></b></td>
+		<td align="left" valign=top><font color="#000000">Generate/Sign certificate</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get pv --sort-by=.spec.capacity.storage -o=custom-columns=NAME:.metadata.name,CAPACITY:.spec.capacity.storage &gt; /opt/outputs/pv-and-capacity-sorted.txt</font></b></td>
+		<td align="left" valign=top><font color="#000000">Sort output and use custom columns</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type==&quot;InternalIP&quot;)].address}'</font></b></td>
+		<td align="left" valign=top><font color="#000000">Explore the json loop</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono">kubectl exec -ti busybox -- nslookup XXX-XX-XX-XX.mynamespace.pod.cluster.local</font></b></td>
+		<td align="left" valign=top><font face="Cambria">nslookup pod in the different namespace</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono">kubectl exec -ti busybox -- nslookup myservicename.mynamespace.pod.cluster.local</font></b></td>
+		<td align="left" valign=top><font face="Cambria">nslookup service in the different namespace</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table4"><h1>Sheet 5: <em>Kubeadm</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="963"></colgroup>
+	<colgroup width="828"></colgroup>
+	<colgroup width="405"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=top><b><font size=3 color="#000000">Link</font></b></td>
+		<td align="left" valign=top><b><font size=3 color="#000000">Description</font></b></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Official kubernetes docs about kubeadm</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><u><font face="Cambria" color="#0000FF"><a href="https://www.katacoda.com/courses/kubernetes/getting-started-with-kubeadm">https://www.katacoda.com/courses/kubernetes/getting-started-with-kubeadm</a></font></u></td>
+		<td align="left" valign=top><font color="#000000">Quickly prepare your cluster using interactive browser bases environment</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><font color="#000000"><br></font></td>
+		<td align="left" valign=top><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td colspan=3 height="21" align="center" valign=top bgcolor="#EFEFEF"><b><font size=4 color="#000000">Bootstrapping a cluster with kubeadm might be one of the  tasks in CKA exam. Here is the step by step guide how to create a 3 node cluster (1 master (10.180.192.1) and 2 workers (10.180.192.2 and 10.180.192.3)). Assuming that you already have 3 Ubuntu servers installed and they have initial network config in place. </font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font size=3 color="#000000">Action</font></b></td>
+		<td align="left" valign=top><b><font size=3 color="#000000">Description</font></b></td>
+		<td align="left" valign=bottom><b><font color="#000000">Useful Link</font></b></td>
+	</tr>
+	<tr>
+		<td colspan=3 height="21" align="center" valign=top bgcolor="#CCCCCC"><b><font size=4 color="#000000">Run on the all three nodes</font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">swapoff -a  </font></b></td>
+		<td align="left" valign=top><font color="#000000">Disable memory swap on all nodes </font></td>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.tecmint.com/disable-swap-partition-in-centos-ubuntu/">https://www.tecmint.com/disable-swap-partition-in-centos-ubuntu/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">vi /etc/fstab</font></b></td>
+		<td align="left" valign=top><font color="#000000">Edit fstab by removing or commentin entry for swap</font></td>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://www.tecmint.com/disable-swap-partition-in-centos-ubuntu/">https://www.tecmint.com/disable-swap-partition-in-centos-ubuntu/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">sudo apt-get update &amp;&amp; apt-get install -y apt-transport-https</font></b></td>
+		<td align="left" valign=top><font color="#000000">Install a package that allows using https as well as http in apt repository sources</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -<br></font></b></td>
+		<td align="left" valign=top><font color="#000000">Add Google repository gpg key</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">sudo bash -c 'cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list<br>deb https://apt.kubernetes.io/ kubernetes-xenial main<br>EOF'</font></b></td>
+		<td align="left" valign=top><font color="#000000">Add the Kubernetes apt repository</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">sudo apt-get install -y docker.io kubelet kubeadm kubectl or apt-get install kubelet=1.16.0-00</font></b></td>
+		<td align="left" valign=top><font color="#000000">Install the required packages (you can review available package version with apt-cache policy &quot;package name here&quot; and specify required version: )</font></td>
+		<td align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker">https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><font face="Roboto Mono" color="#000000">sudo apt-mark hold docker.io kubelet kubeadm kubectl<br></font></td>
+		<td align="left" valign=top><font color="#000000">Disable automatic update for packages which are required for Kubernetes to be up and running</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl status kubelet.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">Check status of kubelet it will constantly crash until join to the cluster</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl status docker.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">Check status of docker service should up and running</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl enable kubelet.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">Enable autostart for kubelet service</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">systemctl enable docker.service</font></b></td>
+		<td align="left" valign=top><font color="#000000">Enable autostart for docker service</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">sysctl net.bridge.bridge-nf-call-iptables=1</font></b></td>
+		<td align="left" valign=top><font color="#000000">Set /proc/sys/net/bridge/bridge-nf-call-iptables to 1 to pass bridged IPv4 traffic to iptables’ chains. This is a requirement for some CNI plugins to work</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td colspan=3 height="21" align="center" valign=top bgcolor="#CCCCCC"><b><font size=4 color="#000000">Run only on the master node</font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubeadm -init or kubeadm init --pod-network-cidr=192.168.0.0/16</font></b></td>
+		<td align="left" valign=top><font color="#000000">Initialiaze control plane node (Depending on which CNI plugin you will choose it might be required to define a --pod-network-cidr argument)</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font face="Roboto Mono" color="#000000">mkdir -p $HOME/.kube<br>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>sudo chown $(id -u):$(id -g) $HOME/.kube/config</font></b></td>
+		<td align="left" valign=top><font color="#000000">Prepare a kubeconfig file for current user. Create a kube config folder in your home directory. Copy admin.conf file to newly create folder. Change owner and group</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl apply -f &quot;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&quot;</font></b></td>
+		<td align="left" valign=bottom><font color="#000000">Deploy a CNI plugin: Flanel=https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml Weave=kubectl apply -f &quot;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&quot;  Calico=kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get pods --all-namespaces --watch</font></b></td>
+		<td align="left" valign=bottom><font color="#000000">Wait till all system pods will be up and running</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td colspan=3 height="21" align="center" valign=top bgcolor="#CCCCCC"><b><font size=3 color="#000000">Optional steps, should be executed on the master node by demand</font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubeadm token list </font></b></td>
+		<td align="left" valign=top><font color="#000000">If output generated after the kubeadm init execution on master node was not saved run this command to retrieve the token</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubeadm token create </font></b></td>
+		<td align="left" valign=top><font color="#000000">By default, tokens expire after 24 hours. If you are joining a node to the cluster after the current token has expired, you can create a new token by running the following command on the</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">openssl x509 -in /etc/kubernetes/pki/ca.crt -pubkey -noout | openssl pkey -pubin -outform DER | openssl dgst -sha256</font></b></td>
+		<td align="left" valign=top><font color="#000000">Extract ca cert hash </font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td colspan=3 height="21" align="center" valign=top bgcolor="#CCCCCC"><b><font size=4 color="#000000">Run on the worker nodes</font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font color="#303030">kubeadm join --token &lt;token&gt; &lt;control-plane-host&gt;:&lt;control-plane-port&gt; --discovery-token-ca-cert-hash sha256:&lt;hash&gt;</font></b></td>
+		<td align="left" valign=top><font color="#000000">Run the command that was output by kubeadm init. Standard control plane port is 6443</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td colspan=3 height="21" align="center" valign=top bgcolor="#CCCCCC"><b><font size=4 color="#000000">Run on the master nodes or where you have config file configured</font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get pods --all-namespace --watch</font></b></td>
+		<td align="left" valign=top><font color="#000000">Wait for all system pods will be up and running</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=top><b><font face="Roboto Mono" color="#000000">kubectl get nodes </font></b></td>
+		<td align="left" valign=top><font color="#000000">Check for status of nodes all should be ready</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table5"><h1>Sheet 6: <em>Logs</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="540"></colgroup>
+	<colgroup width="423"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font size=4 color="#000000">Log Discription</font></b></td>
+		<td align="left" valign=bottom><b><font size=4 color="#000000">Path</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Config folder</font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/kubernetes/</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Certificate files</font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/kubernetes/pki/</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Credentials to API server</font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/kubernetes/kubelet.conf</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Superuser credentials</font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/kubernetes/admin.conf</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">kubectl config file</font></td>
+		<td align="left" valign=bottom><font color="#000000">~/.kube/config</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Kubernets (kubelet) working dir</font></td>
+		<td align="left" valign=bottom><font color="#000000">/var/lib/kubelet/</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Docker working dir</font></td>
+		<td align="left" valign=bottom><font color="#000000">/var/lib/docker/, /var/log/containers/</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Etcd working dir</font></td>
+		<td align="left" valign=bottom><font color="#000000">/var/lib/etcd/</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Network cni</font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/cni/net.d/</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Log files</font></td>
+		<td align="left" valign=bottom><font color="#000000">/var/log/pods/</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">log in worker node</font></td>
+		<td align="left" valign=bottom><font color="#000000">/var/log/kubelet.log, /var/log/kube-proxy.log</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">log in master node</font></td>
+		<td align="left" valign=bottom><font color="#000000">kube-apiserver.log, kube-scheduler.log, kube-controller-manager.log</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Env</font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/systemd/system/kubelet.service.d/10-kubeadm.conf</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Env</font></td>
+		<td align="left" valign=bottom><font color="#000000">export KUBECONFIG=/etc/kubernetes/admin.conf</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Core dns core files </font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/core/dns or kubectl get configmap coredns -n kube-system</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Kubernetes manifests when you deploy cluster with kubeadm</font></td>
+		<td align="left" valign=bottom><font color="#000000">/etc/kubernetes/manifests</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">Service account tokens are mounted under this directory inside the pods </font></td>
+		<td align="left" valign=bottom><font color="#000000">/var/run/secrets/kubernetes.io/serviceaccount/token</font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table6"><h1>Sheet 7: <em>HandyTools</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="147"></colgroup>
+	<colgroup width="131"></colgroup>
+	<colgroup width="107"></colgroup>
+	<colgroup width="169"></colgroup>
+	<colgroup width="183"></colgroup>
+	<colgroup width="107"></colgroup>
+	<colgroup width="232"></colgroup>
+	<colgroup width="284"></colgroup>
+	<colgroup width="107"></colgroup>
+	<colgroup width="226"></colgroup>
+	<colgroup width="270"></colgroup>
+	<tr>
+		<td colspan=2 height="21" align="center" valign=bottom bgcolor="#CCCCCC"><b><font size=4 color="#000000">VIM Text Editor</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td colspan=2 align="center" valign=bottom bgcolor="#CCCCCC"><b><font size=4 color="#000000">NANO Text Editor</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td colspan=2 align="center" valign=bottom bgcolor="#CCCCCC"><b><font size=4 color="#000000">TMUX Terminal Manager</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td colspan=2 align="center" valign=bottom bgcolor="#CCCCCC"><b><font size=4 color="#000000">NETSTAT Network statistics</font></b></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font size=3 color="#000000">ShortCut</font></b></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Description</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">ShortCut</font></b></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Description</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">ShortCut</font></b></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Description</font></b></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Command</font></b></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Description</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">i</font></td>
+		<td align="left" valign=bottom><font color="#000000">to edit mode</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">F6</font></td>
+		<td align="left" valign=bottom><font color="#000000">Search for text</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#F8F9F9"><font color="#A52A2A">tmux</font></td>
+		<td align="left" valign=bottom><font color="#000000">start new tmux session with default name &quot;0&quot;</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -natu | grep 'ESTABLISHED'</font></td>
+		<td align="left" valign=bottom><font color="#000000">Show Established Connection</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">v</font></td>
+		<td align="left" valign=bottom><font color="#000000">to view mode</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ALT+U</font></td>
+		<td align="left" valign=bottom><font color="#000000">Undo</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">tmux ls</font></td>
+		<td align="left" valign=bottom><font color="#000000">list sessions</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -an | grep 'LISTEN'</font></td>
+		<td align="left" valign=bottom><font color="#000000">Show Connection in Listen Status</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">ESC</font></td>
+		<td align="left" valign=bottom><font color="#000000">to exit edit mode</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ALT+E</font></td>
+		<td align="left" valign=bottom><font color="#000000">Redo</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Ctrl+b d</font></td>
+		<td align="left" valign=bottom><font color="#000000">reattach from session</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -anlp | grep 17369</font></td>
+		<td align="left" valign=bottom><font color="#000000">Show Port Number used by PID</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">:w</font></td>
+		<td align="left" valign=bottom><font color="#000000">to save</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ALT+6</font></td>
+		<td align="left" valign=bottom><font color="#000000">Copy</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Ctrl+b x | exit</font></td>
+		<td align="left" valign=bottom><font color="#000000">kill session or pane</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -s</font></td>
+		<td align="left" valign=bottom><font color="#000000">Show statistics for all protocols</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">:q</font></td>
+		<td align="left" valign=bottom><font color="#000000">to exit</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">CTRL+K | F 9</font></td>
+		<td align="left" valign=bottom><font color="#000000">Cut</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">tmux attach-session -t 0</font></td>
+		<td align="left" valign=bottom><font color="#000000">back to session (here &quot;0&quot; is session name)</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -anlp | grep 80</font></td>
+		<td align="left" valign=bottom><font color="#000000">Show which process using a particular port</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">:wq</font></td>
+		<td align="left" valign=bottom><font color="#000000">to save and exit</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">CTRL+U | F10</font></td>
+		<td align="left" valign=bottom><font color="#000000">Uncut/Paste</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Ctrl+b % </font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFFF"><font face="Roboto" color="#000000">Split current pane horizontally into two panes</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -a | more </font></td>
+		<td align="left" valign=bottom><font color="#000000">Show all info (use more for paged view)</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">:q!</font></td>
+		<td align="left" valign=bottom><font color="#000000">discard the changes</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">CTRL+X</font></td>
+		<td align="left" valign=bottom><font color="#000000">Exit Y for save, N for discard</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Ctrl+b &quot; </font></td>
+		<td align="left" valign=bottom><font color="#000000">Split current pane vertically into two panes</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -nplt</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">y</font></td>
+		<td align="left" valign=bottom><font color="#000000">to copy text</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">CTRL+W</font></td>
+		<td align="left" valign=bottom><font color="#000000">Search</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Ctrl+b arrow move betwee panes</font></td>
+		<td align="left" valign=bottom bgcolor="#FFFFFF"><font color="#000000">Move between panes</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">netstat -anp | grep etcd</font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">d</font></td>
+		<td align="left" valign=bottom><font color="#000000">to cut text</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">ALT+A</font></td>
+		<td align="left" valign=bottom><font color="#000000">Set the mark</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000">Ctrl+B and :setw synchronize-panes</font></td>
+		<td align="left" valign=bottom><font color="#000000">Sync Panes</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">x</font></td>
+		<td align="left" valign=bottom><font color="#000000">remove text</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">p</font></td>
+		<td align="left" valign=bottom><font color="#000000">to paste</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">u</font></td>
+		<td align="left" valign=bottom><font color="#000000">undo</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">r</font></td>
+		<td align="left" valign=bottom><font color="#000000">redo</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">:s/string n(for next)</font></td>
+		<td align="left" valign=bottom><font color="#000000">Search</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">:s/pattern/replace/</font></td>
+		<td align="left" valign=bottom><font color="#000000">Search/Replace</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font color="#000000">:%s/pattern/replace/</font></td>
+		<td align="left" valign=bottom><font color="#000000">Search/Replace All</font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom bgcolor="#CCCCCC"><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font color="#000000"><br></font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table7"><h1>Sheet 8: <em>CKA-Blogs-Posts</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="727"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font size=3 color="#000000">Link</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/platformer-blog/how-i-passed-the-cka-certified-kubernetes-administrator-exam-8943aa24d71d">https://medium.com/platformer-blog/how-i-passed-the-cka-certified-kubernetes-administrator-exam-8943aa24d71d</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/faun/certified-kubernetes-administrator-cka-ultimate-guide-238710f9ba73">https://medium.com/faun/certified-kubernetes-administrator-cka-ultimate-guide-238710f9ba73</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/@pmvk/tips-to-crack-certified-kubernetes-administrator-cka-exam-c949c7a9bea1">https://medium.com/@pmvk/tips-to-crack-certified-kubernetes-administrator-cka-exam-c949c7a9bea1</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/@nassim.kebbani/how-to-beat-kubernetes-ckad-certification-c84bff8d61b1">https://medium.com/@nassim.kebbani/how-to-beat-kubernetes-ckad-certification-c84bff8d61b1</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="http://devnetstack.com/certified-kubernetes-administrator-exam-study-guide/?utm_sq=g2sz8o5o9f">http://devnetstack.com/certified-kubernetes-administrator-exam-study-guide/?utm_sq=g2sz8o5o9f</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/@amgill1234/how-i-cleared-99-on-cka-exam-9b56cc76bf5b">https://medium.com/@amgill1234/how-i-cleared-99-on-cka-exam-9b56cc76bf5b</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/@sovmirich/preparing-and-passing-the-certified-kubernetes-administrator-cka-exam-4a76fa4b1c4">https://medium.com/@sovmirich/preparing-and-passing-the-certified-kubernetes-administrator-cka-exam-4a76fa4b1c4</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/faun/i-recently-cleared-cka-here-are-some-suggestions-680b192a88f3">https://medium.com/faun/i-recently-cleared-cka-here-are-some-suggestions-680b192a88f3</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://suraj.pro/post/journey-to-cka/">https://suraj.pro/post/journey-to-cka/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/@princerachit/how-i-scored-99-in-cka-first-attempt-not-for-beginners-d57288f5148f">https://medium.com/@princerachit/how-i-scored-99-in-cka-first-attempt-not-for-beginners-d57288f5148f</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://medium.com/faun/preparation-and-resources-for-cka-exam-ca868fc678c9">https://medium.com/faun/preparation-and-resources-for-cka-exam-ca868fc678c9</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://awscloudengineer.com/clearing-cka-exam-with-100-result/">https://awscloudengineer.com/clearing-cka-exam-with-100-result/</a></font></u></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://jimangel.io/post/cka-exam-for-experienced-kubernetes-operators/">https://jimangel.io/post/cka-exam-for-experienced-kubernetes-operators/</a></font></u></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+<hr>
+<A NAME="table8"><h1>Sheet 9: <em>OtherHelpfulLinks</em></h1></A>
+<table cellspacing="0" border="0">
+	<colgroup width="721"></colgroup>
+	<colgroup width="365"></colgroup>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><font size=3 color="#000000">Link</font></b></td>
+		<td align="left" valign=bottom><b><font size=3 color="#000000">Description</font></b></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates">https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Contains a lot of yaml manfiset examples </font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://github.com/arush-sal/cka-practice-environment">https://github.com/arush-sal/cka-practice-environment</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">CKA practice environment</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://slack.kubernetes.io/">https://slack.kubernetes.io/</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Kubernetes Slack chanel</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://learnk8s.io/a/troubleshooting-kubernetes.pdf">https://learnk8s.io/a/troubleshooting-kubernetes.pdf</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Awesome poster on how to troubleshoot K8S deployments</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://docs.google.com/drawings/d/1MtWL8qRTs6PlnJrW4dh8135_S9e2SaawT410bJuoBPk/edit?utm_sq=g9lrtto3fp">https://docs.google.com/drawings/d/1MtWL8qRTs6PlnJrW4dh8135_S9e2SaawT410bJuoBPk/edit?utm_sq=g9lrtto3fp</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">kube-proxy iptables &quot;nat&quot; control flow</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font color="#1155CC"><a href="https://docs.google.com/spreadsheets/d/10NltoF_6y3mBwUzQ4bcQLQfCE1BWSgUDcJXy-Qp2JEU/edit#gid=0">https://docs.google.com/spreadsheets/d/10NltoF_6y3mBwUzQ4bcQLQfCE1BWSgUDcJXy-Qp2JEU/edit#gid=0</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Huge list of Kubernetes learning resources</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font color="#1155CC"><a href="https://github.com/walidshaari/Kubernetes-Certified-Administrator">https://github.com/walidshaari/Kubernetes-Certified-Administrator</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">CKA Prep Guide</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://github.com/DStorck/cka-prep">https://github.com/DStorck/cka-prep</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">CKA Prep Environment with Q/A</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://en.wikipedia.org/wiki/YAML">https://en.wikipedia.org/wiki/YAML</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">Understand YAML</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><b><u><font face="Cambria" color="#0000FF"><a href="http://www.kubernet.io/index.html">http://www.kubernet.io/index.html</a></font></u></b></td>
+		<td align="left" valign=bottom><font color="#000000">Good resources for CKA exam preparation</font></td>
+	</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><u><font face="Cambria" color="#0000FF"><a href="https://levelup.gitconnected.com/kubernetes-cka-example-questions-practical-challenge-86318d85b4d">https://levelup.gitconnected.com/kubernetes-cka-example-questions-practical-challenge-86318d85b4d</a></font></u></td>
+		<td align="left" valign=bottom><font color="#000000">CKA practice tasks  </font></td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

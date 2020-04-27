@@ -5,14 +5,20 @@
 <details><summary>Solution</summary>
 <p>
 
+There are two deployment paths below, one for flannel and another for calico. The only difference between them is the default pod network passed in at the kubeadm init step. Both work well and are on the exam. Calico should be used if you are going to be testing out pod security policies.
+
 ```bash
-make ssh-master
+## Flannel based cluster deployment
+
+make ssh/master
 
 # Deploy initial master
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 
 # Configure kubectl access
 mkdir -p $HOME/.kube
+sudo mkdir -p /root/.kube
+sudo cp -i /etc/kubernetes/admin.conf /root/.kube/config
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
@@ -20,14 +26,31 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134e0ed5af15c65e414cf26827915/Documentation/kube-flannel.yml
 ```
 
+```bash
+## Alternatively, a calico based deployment
+
+make ssh/master
+
+# Deploy initial master
+sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+
+# Configure kubectl access
+mkdir -p $HOME/.kube
+sudo mkdir /root/.kube
+sudo cp -i /etc/kubernetes/admin.conf /root/.kube/config
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
+```
 Copy the output from the first step and deploy to the other nodes using something like this:
 
 ```bash
-make ssh-worker1
+make ssh/worker1
 sudo kubeadm join 172.16.1.11:6443 --token xqckqj.2j6umqdoe416ra9p --discovery-token-ca-cert-hash sha256:6701e97f40377b98e0ae2d35add6ada9050158ab876f9669b22ff09dedae8897
 exit
 
-make ssh-worker2
+make ssh/worker2
 sudo kubeadm join 172.16.1.11:6443 --token xqckqj.2j6umqdoe416ra9p --discovery-token-ca-cert-hash sha256:6701e97f40377b98e0ae2d35add6ada9050158ab876f9669b22ff09dedae8897
 exit
 ```
@@ -35,7 +58,7 @@ exit
 Then validate on the master node that all nodes are up and running
 
 ```bash
-make ssh-master
+make ssh/master
 kubectl get nodes
 ```
 
