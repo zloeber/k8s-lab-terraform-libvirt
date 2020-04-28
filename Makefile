@@ -5,6 +5,7 @@ ROOT_PATH := $(abspath $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIS
 BIN_PATH := $(ROOT_PATH)/.local/bin
 KUBECONFIG_PATH ?= $(ROOT_PATH)/.local/kubeconfig
 TASK_PATH := $(ROOT_PATH)/tasks
+CONFIG_PATH := $(ROOT_PATH)/config
 KEY_PATH := $(ROOT_PATH)/.local/.ssh
 KEY_NAME := $(KEY_PATH)/id_rsa
 
@@ -184,13 +185,6 @@ ifeq (,$(wildcard $(BIN_PATH)/kubectl))
 	@echo "Installed: $(BIN_PATH)/kubectl"
 endif
 
-.PHONY: kube/deploy/metallb
-kube/deploy/metallb: .dep/kubectl .kube/get/configfile ## Deploy metallb on the cluster
-	@$(kubectl) apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
-	@$(kubectl) apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
-	@$(kubectl) apply -f $(TASK_PATH)/metallb-config.yaml
-	@$(kubectl) create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" || true
-
 # .PHONY: kube/deploy/metricsserver
 # kube/deploy/metricsserver: .dep/kubectl .kube/get/configfile## Deploy metrics server
 # 	@$(kubectl) apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
@@ -206,6 +200,13 @@ kube/deploy/nfs: .dep/kubectl .kube/get/configfile .dep/helm ## Deploy nfs dynam
 		--set nfs.server=$(shell $(terraform) output master_ip) \
 		--set nfs.path=/opt/nfs \
 		--kubeconfig $(KUBECONFIG_PATH)/config
+
+.PHONY: kube/deploy/metallb
+kube/deploy/metallb: .dep/kubectl .kube/get/configfile ## Deploy metallb on the cluster
+	@$(kubectl) apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
+	@$(kubectl) apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
+	@$(kubectl) apply -f $(CONFIG_PATH)/metallb-config.yaml
+	@$(kubectl) create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" || true
 
 .PHONY: kube/delete/metallb
 kube/delete/metallb: ## Delete metallb deployment
