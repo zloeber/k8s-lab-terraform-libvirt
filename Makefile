@@ -15,6 +15,7 @@ terraform := $(BIN_PATH)/terraform
 gh := $(BIN_PATH)/gh
 xpanes := $(BIN_PATH)/xpanes
 kubectl := $(BIN_PATH)/kubectl --kubeconfig $(KUBECONFIG_PATH)/config
+helm := $(BIN_PATH)/helm
 
 ENV_VARS ?= $(ROOT_PATH)/envvars.env
 ifneq (,$(wildcard $(ENV_VARS)))
@@ -22,7 +23,7 @@ include $(ENV_VARS)
 export $(shell sed 's/=.*//' $(ENV_VARS))
 endif
 
-KUBE_VERSION ?= 1.17.5
+KUBE_VERSION ?= 1.18.0
 
 # Generic shared variables
 ifeq ($(shell uname -m),x86_64)
@@ -73,6 +74,16 @@ endif
 ifeq (,$(wildcard $(KEY_NAME)))
 	@mkdir -p $(KEY_PATH)
 	ssh-keygen -t rsa -b 4096 -N '' -f $(KEY_NAME) -q
+endif
+
+.PHONY: .dep/helm
+.dep/helm: ## Downloads helm 3
+ifeq (,$(wildcard $(helm)))
+	mkdir -p /tmp/helm3
+	curl --retry 3 --retry-delay 5 --fail -sSL -o - https://get.helm.sh/helm-v3.1.2-linux-amd64.tar.gz | tar -C /tmp/helm3 -zx linux-amd64/helm
+	mv /tmp/helm3/linux-amd64/helm $(helm)
+	rm -rf /tmp/helm3
+	chmod +x $(helm)
 endif
 
 .PHONY: .dep/xpanes
@@ -180,13 +191,21 @@ kube/deploy/metallb: .dep/kubectl .kube/get/configfile ## Deploy metallb on the 
 	@$(kubectl) apply -f $(TASK_PATH)/metallb-config.yaml
 	@$(kubectl) create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" || true
 
-.PHONY: kube/deploy/metricsserver
-kube/deploy/metricsserver: .dep/kubectl .kube/get/configfile## Deploy metrics server
-	@$(kubectl) apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
+# .PHONY: kube/deploy/metricsserver
+# kube/deploy/metricsserver: .dep/kubectl .kube/get/configfile## Deploy metrics server
+# 	@$(kubectl) apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
 
-.PHONY: kube/deploy/localstorage
-kube/deploy/localstorage: .dep/kubectl .kube/get/configfile## Deploy metrics server
-	@$(kubectl) apply -f $(TASK_PATH)/local-storageclass.yaml
+# .PHONY: kube/deploy/localstorage
+# kube/deploy/localstorage: .dep/kubectl .kube/get/configfile  ## Deploy metrics server
+# 	@$(kubectl) apply -f $(TASK_PATH)/local-storageclass.yaml
+
+.PHONY: kube/deploy/nfs
+kube/deploy/nfs: .dep/kubectl .kube/get/configfile .dep/helm ## Deploy nfs dynamic pvc provisioning
+	$(helm) install nfsstorage \
+		stable/nfs-client-provisioner \
+		--set nfs.server=$(shell $(terraform) output master_ip) \
+		--set nfs.path=/opt/nfs \
+		--kubeconfig $(KUBECONFIG_PATH)/config
 
 .PHONY: kube/delete/metallb
 kube/delete/metallb: ## Delete metallb deployment

@@ -93,16 +93,21 @@ kubectl get nodes
 <details><summary>Solution</summary>
 <p>
 
-On each node within the `/root` path will be a set of files which can be used to bootstrap an nfs server as well as deploy nfs provisioner to the cluster.
+On each node within the `/root` path will be a set of files which can be used to bootstrap an nfs server.
 
 ```bash
-# Assuming you are on the root node and your cluster has been fully deployed already,
+# Run only on master (though the files will be on all nodes)
+make ssh/master
 sudo su -
 chmod +x *.sh
 ./install-nfs.sh
-./bootstrap-nfs-provisioner.sh
+exit
 ```
 
-This also sets the default storage class to nfs-storage.
+Then provision the helm chart using this task
+
+```bash
+make kube/deploy/nfs
+```
 
 </p></detail>
