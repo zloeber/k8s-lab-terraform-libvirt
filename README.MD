@@ -94,6 +94,22 @@ sudo echo "group = `whoami`" >> /etc/libvirt/qemu.conf
 sudo systemctl start libvirtd.service
 ```
 
+## Exam Tips
+
+Here are a few random tips which may or may not help you on exam day.
+
+**kubectl explain**
+
+Using `kubectl explain` will show more information on just about everything you may be authoring in YAML manfiests. The format is: `<resource>.<group>.<property>` for individual properties. Or you can get all available properties by omitting the `.<property>`. With some creativity and the `--recursive=true` flag you can get somthing that looks almost like a YAML snippet.
+
+```bash
+# Show all available properties for pod.spec
+kubectl explain pod.spec | grep '<'
+
+# Show all available properties for deployment.spec.template.spec.containers
+kubectl explain deployment.spec.template.spec.containers --recursive=true | grep '<' 
+```
+
 ## Links
 
 [CKA Practice Excercises](https://github.com/alijahnas/CKA-practice-exercises) (initial source of the terraform manifest and a great study guide!)
@@ -102,10 +118,11 @@ sudo systemctl start libvirtd.service
 
 [Additional CKA Study Repo 2](https://github.com/dgkanatsios/CKAD-exercises)
 
+[A Great CKA Study Guide](http://www.kubernet.io/)
+
 [Libvirt Terraform Provider](https://github.com/dmacvicar/terraform-provider-libvirt)
 
 [xpanes for tmux](https://github.com/greymd/tmux-xpanes)
 
 [Cloud Init Examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
 
-[Kubernetes Static Volume Provisioner](https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner)

@@ -129,22 +129,18 @@ Go OS/Arch: linux/amd64
 ```
 
 ```bash
-# Download etcd client
-wget https://github.com/etcd-io/etcd/releases/download/v3.4.3/etcd-v3.4.3-linux-amd64.tar.gz
-tar xzvf etcd-v3.4.3-linux-amd64.tar.gz
-sudo mv etcd-v3.4.3-linux-amd64/etcdctl /usr/local/bin
+# Download etcd client (should already be root for exam I think)
+sudo su -
+# Download etcd client (should already exist on the exam)
+apt install etcd-client
+# Get all key information from the deployment
+cat /etc/kubernetes/manifests/etcd.yaml 
 
 # save etcd snapshot
-sudo ETCDCTL_API=3 etcdctl snapshot save --endpoints=172.16.1.11:2379 snapshot.db --cacert /etc/kubernetes/pki/etcd/server.crt --cert /etc/kubernetes/pki/etcd/ca.crt --key /etc/kubernetes/pki/etcd/ca.key
+ETCDCTL_API=3 etcdctl snapshot save --endpoints=https://172.16.1.11:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key backupetcd1
 
 # View the snapshot
-ETCDCTL_API=3 sudo etcdctl --write-out=table snapshot status snapshot.db 
-+----------+----------+------------+------------+
-|   HASH   | REVISION | TOTAL KEYS | TOTAL SIZE |
-+----------+----------+------------+------------+
-| b72a6b6e |    34871 |       1430 |     3.3 MB |
-+----------+----------+------------+------------+
-
+ETCDCTL_API=3 etcdctl --write-out=table snapshot status backupetcd1
 ```
 
 </p>
