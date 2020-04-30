@@ -5,3 +5,4 @@ terraform.d
 terraform.tfstate*
 volume_pool
 envvars.env
+.direnv/

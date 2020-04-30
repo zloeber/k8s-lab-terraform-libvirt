@@ -76,6 +76,19 @@ The cloud_init.cfg template is used to provide an initial configuration for the 
 
 See the cloud_init.cfg for further information or to customize the deployment further.
 
+## Extras
+
+There are some additional configuration tasks that you can use to shortcut a cluster setup found in the `tasks/1-deploy-kubernetes.md` documentation.
+
+If you are brave and are using asdf-vm along with direnv you may also be able to use the included ansible playbook to deploy your cluster even more quickly. This assumes that the direnv Python virtual environment got setup correctly and that asdf is also working. The original playbook (see link in references) was modified to not install docker and does not do any additional deployment beyond the calico CNI setup and node joins via kubeadm. Nor has any other CNI been tested.
+
+```bash
+make cluster/deploy
+make kube/export/config
+```
+
+It wouldn't be too hard to dissect the makefile task to run this playbook manually of course.
+
 ## Issues
 
 On Ubuntu distros SELinux is enforced by qemu even if it is disabled globally, this might cause unexpected Could not open '/var/lib/libvirt/images/<FILE_NAME>': Permission denied errors. Double check that security_driver = "none" is uncommented in /etc/libvirt/qemu.conf and issue sudo systemctl restart libvirt-bin to restart the daemon. [source](https://github.com/dmacvicar/terraform-provider-libvirt/issues/546)
@@ -126,3 +139,4 @@ kubectl explain deployment.spec.template.spec.containers --recursive=true | grep
 
 [Cloud Init Examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
 
+[kubeadm via Ansible](https://github.com/kairen/kubeadm-ansible)

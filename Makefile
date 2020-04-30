@@ -17,6 +17,7 @@ gh := $(BIN_PATH)/gh
 xpanes := $(BIN_PATH)/xpanes
 kubectl := $(BIN_PATH)/kubectl --kubeconfig $(KUBECONFIG_PATH)/config
 helm := $(BIN_PATH)/helm
+terraform-inventory := $(BIN_PATH)/terraform-inventory
 
 ENV_VARS ?= $(ROOT_PATH)/envvars.env
 ifneq (,$(wildcard $(ENV_VARS)))
@@ -80,11 +81,25 @@ endif
 .PHONY: .dep/helm
 .dep/helm: ## Downloads helm 3
 ifeq (,$(wildcard $(helm)))
-	mkdir -p /tmp/helm3
-	curl --retry 3 --retry-delay 5 --fail -sSL -o - https://get.helm.sh/helm-v3.1.2-linux-amd64.tar.gz | tar -C /tmp/helm3 -zx linux-amd64/helm
-	mv /tmp/helm3/linux-amd64/helm $(helm)
-	rm -rf /tmp/helm3
-	chmod +x $(helm)
+	@echo "Attempting to install helm 3"
+	@mkdir -p /tmp/helm3
+	@curl --retry 3 --retry-delay 5 --fail -sSL -o - https://get.helm.sh/helm-v3.1.2-linux-amd64.tar.gz | tar -C /tmp/helm3 -zx linux-amd64/helm
+	@mv /tmp/helm3/linux-amd64/helm $(helm)
+	@rm -rf /tmp/helm3
+	@chmod +x $(helm)
+endif
+
+.PHONY: .dep/terraform-inventory
+.dep/terraform-inventory: ## Downloads terraform-inventory
+ifeq (,$(wildcard $(terraform-inventory)))
+	@echo "Attempting to install terraform-inventory"
+	@mkdir -p /tmp/terraform-inventory
+	@curl --retry 3 --retry-delay 5 --fail -sSL -L -o /tmp/terraform-inventory/terraform-inventory.zip https://github.com/adammck/terraform-inventory/releases/download/v0.9/terraform-inventory_0.9_linux_amd64.zip
+	@unzip /tmp/terraform-inventory/terraform-inventory.zip -d /tmp/terraform-inventory
+	@find /tmp/terraform-inventory -type f -name terraform-inventory | xargs -I {} cp -f {} $(terraform-inventory)
+	@chmod +x $(terraform-inventory)
+	@[ -n "/tmp" ] && [ -n "terraform-inventory" ] && rm -rf "/tmp/terraform-inventory"
+	@echo "Deployed to: $(terraform-inventory)"
 endif
 
 .PHONY: .dep/xpanes
@@ -214,10 +229,27 @@ kube/delete/metallb: ## Delete metallb deployment
 	@$(kubectl) delete -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
 
 .PHONY: kube/export/config
-kube/export/config: ## Displays the correct export command to point kubeconfig to this cluster
+kube/export/config: kube/clean .kube/get/configfile ## Displays the correct export command to point kubeconfig to this cluster
 	@echo 'export KUBECONFIG=$$(pwd)/.local/kubeconfig/config'
 
 .PHONY: kube/clean
 kube/clean: ## Remove old kube config and kubectl files
-	@rm -rf $(BIN_PATH)/kubectl
 	@rm -rf $(KUBECONFIG_PATH)/config
+
+.PHONY: .dep/ansible
+.dep/ansible: ## configure ansible in python virtual environment
+ifeq (,$(wildcard $(ROOT_PATH)/.direnv/python-3.6.10/bin/ansible))
+	$(ROOT_PATH)/.direnv/python-3.6.10/bin/pip3 install ansible
+endif
+
+.PHONY: cluster/deploy
+cluster/deploy: ## Deploy the base cluster with ansible
+	cd $(ROOT_PATH)/ansible-playbook && \
+		$(ROOT_PATH)/.direnv/python-3.6.10/bin/ansible-playbook \
+		$(ROOT_PATH)/ansible-playbook/site.yaml \
+		--private-key $(KEY_NAME) -u ubuntu
+
+# .PHONY: ansible/inventory
+# ansible/inventory: .dep/terraform-inventory ## Attempt to create inventory from terraform state.
+# 	TF_STATE=. $(terraform-inventory) -list
+
