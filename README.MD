@@ -133,6 +133,8 @@ kubectl explain deployment.spec.template.spec.containers --recursive=true | grep
 
 [A Great CKA Study Guide](http://www.kubernet.io/)
 
+[Very Good Kube Troubleshooting Handbook](https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/index.md)
+
 [Libvirt Terraform Provider](https://github.com/dmacvicar/terraform-provider-libvirt)
 
 [xpanes for tmux](https://github.com/greymd/tmux-xpanes)
